@@ -1,0 +1,242 @@
+---
+name: Clinical Grotesque
+colors:
+  surface: '#f8f9ff'
+  surface-dim: '#cbdbf5'
+  surface-bright: '#f8f9ff'
+  surface-container-lowest: '#ffffff'
+  surface-container-low: '#eff4ff'
+  surface-container: '#e5eeff'
+  surface-container-high: '#dce9ff'
+  surface-container-highest: '#d3e4fe'
+  on-surface: '#0b1c30'
+  on-surface-variant: '#584237'
+  inverse-surface: '#213145'
+  inverse-on-surface: '#eaf1ff'
+  outline: '#8c7164'
+  outline-variant: '#e0c0b1'
+  surface-tint: '#9d4300'
+  primary: '#9d4300'
+  on-primary: '#ffffff'
+  primary-container: '#f97316'
+  on-primary-container: '#582200'
+  inverse-primary: '#ffb690'
+  secondary: '#006398'
+  on-secondary: '#ffffff'
+  secondary-container: '#5bb8fe'
+  on-secondary-container: '#00476e'
+  tertiary: '#006c49'
+  on-tertiary: '#ffffff'
+  tertiary-container: '#00b07a'
+  on-tertiary-container: '#003b26'
+  error: '#ba1a1a'
+  on-error: '#ffffff'
+  error-container: '#ffdad6'
+  on-error-container: '#93000a'
+  primary-fixed: '#ffdbca'
+  primary-fixed-dim: '#ffb690'
+  on-primary-fixed: '#341100'
+  on-primary-fixed-variant: '#783200'
+  secondary-fixed: '#cce5ff'
+  secondary-fixed-dim: '#93ccff'
+  on-secondary-fixed: '#001d31'
+  on-secondary-fixed-variant: '#004b73'
+  tertiary-fixed: '#6ffbbe'
+  tertiary-fixed-dim: '#4edea3'
+  on-tertiary-fixed: '#002113'
+  on-tertiary-fixed-variant: '#005236'
+  background: '#f8f9ff'
+  on-background: '#0b1c30'
+  surface-variant: '#d3e4fe'
+typography:
+  headline-xl:
+    fontFamily: Inter
+    fontSize: 28px
+    fontWeight: '600'
+    lineHeight: 36px
+    letterSpacing: -0.02em
+  headline-lg:
+    fontFamily: Inter
+    fontSize: 22px
+    fontWeight: '600'
+    lineHeight: 30px
+    letterSpacing: -0.015em
+  headline-md:
+    fontFamily: Inter
+    fontSize: 18px
+    fontWeight: '600'
+    lineHeight: 24px
+    letterSpacing: -0.01em
+  headline-sm:
+    fontFamily: Inter
+    fontSize: 15px
+    fontWeight: '600'
+    lineHeight: 20px
+  body-lg:
+    fontFamily: Inter
+    fontSize: 16px
+    fontWeight: '400'
+    lineHeight: 24px
+  body-md:
+    fontFamily: Inter
+    fontSize: 14px
+    fontWeight: '400'
+    lineHeight: 20px
+  body-sm:
+    fontFamily: Inter
+    fontSize: 12px
+    fontWeight: '400'
+    lineHeight: 16px
+  label-lg:
+    fontFamily: Inter
+    fontSize: 14px
+    fontWeight: '500'
+    lineHeight: 18px
+  label-md:
+    fontFamily: Inter
+    fontSize: 12px
+    fontWeight: '500'
+    lineHeight: 16px
+  label-sm:
+    fontFamily: Inter
+    fontSize: 11px
+    fontWeight: '600'
+    lineHeight: 14px
+    letterSpacing: 0.02em
+  metric-display:
+    fontFamily: Inter
+    fontSize: 30px
+    fontWeight: '700'
+    lineHeight: 36px
+    letterSpacing: -0.025em
+rounded:
+  sm: 0.25rem
+  DEFAULT: 0.5rem
+  md: 0.75rem
+  lg: 1rem
+  xl: 1.5rem
+  full: 9999px
+spacing:
+  gutter: 1rem
+  gutter-compact: 0.5rem
+  margin: 1.5rem
+  margin-mobile: 1rem
+  space-xs: 0.25rem
+  space-sm: 0.5rem
+  space-md: 0.75rem
+  space-lg: 1.25rem
+  space-xl: 2rem
+---
+
+## Brand & Style
+
+The design system is engineered for modern clinical workflows, outpatient departments, and specialized dental charting systems. Rooted in clinical precision, efficiency, and ergonomic readability, it delivers an interface that feels dependable, sterile, and swift under high-stress medical environments.
+
+### Personality & Tone
+- **Precision & Reliability:** Uncluttered layouts, meticulous alignment, and unambiguous status signaling eliminate cognitive fatigue during rapid patient diagnostic data entry.
+- **Approachable Clinical Warmth:** Neutral crisp white and slate backdrops are energized by a signature warm orange accent, transforming cold institutional software into a modern, supportive workspace.
+- **Ergonomic Density:** Visual hierarchies prioritize scanability with clean grotesque typography, structured data cards, and rapid-glance semantic dental pathology tagging.
+
+### Design Movement
+This design system pairs **Modern Minimalist Functionalism** with **Clinical Low-Contrast Structuring**. Depth is established through crisp slate outlines (`#E2E8F0`), muted soft grey containers (`#F8FAFC`), and subtle tonal layering rather than heavy ambient drop shadows.
+
+## Colors
+
+The palette balances clean medical neutrals with Docplix's signature warm orange brand identity and a distinct set of clinical condition indicators for dental examinations.
+
+### Core Architecture
+- **Primary (`#F97316`):** The operational highlight. Used for active navigation pills, primary interaction buttons (e.g., "Save Examination"), focus borders, and active tabs.
+- **Surface & Canvas:**
+  - `surface-canvas`: `#FFFFFF` for the baseline crisp workspace.
+  - `surface-subtle`: `#F8FAFC` for card containers, table headers, and form inputs.
+  - `surface-muted`: `#F1F5F9` for inactive tabs, disabled states, and quadrant divider containers.
+- **Text & Content Hierarchy:**
+  - `text-primary`: `#1E293B` (deep clinical slate) for primary numbers, headings, and tooth labels.
+  - `text-secondary`: `#334155` for field labels, section subheaders, and table contents.
+  - `text-muted`: `#64748B` for metadata, timestamps, and placeholder guidance.
+  - `border-subtle`: `#E2E8F0` and `#E5E7EB` for hairline card and input borders.
+
+### Dental Examination & Clinical Condition Badges
+Specific semantic tokens map directly to clinical indicators:
+- **Caries:** `#EF4444` (Coral Red)
+- **Tooth Fracture:** `#EAB308` (Amber Gold)
+- **Pocket:** `#8B5CF6` (Deep Violet)
+- **Bleeding on Probing:** `#DC2626` (Intense Crimson)
+- **Gingival Inflammation:** `#FB923C` (Soft Peach-Orange)
+- **Discoloration:** `#92400E` (Earthy Ochre)
+- **Diastema:** `#84CC16` (Lime Chartreuse)
+- **Abrasion:** `#38BDF8` (Sky Cerulean)
+- **Pus Discharge:** `#22C55E` (Emerald Green)
+- **Attrition:** `#94A3B8` (Neutral Slate Grey)
+
+## Typography
+
+The type system adopts a Samsung Sans-inspired neo-grotesque standard using **Inter** across all typographic tokens. It is characterized by tall x-heights, open apertures, and crisp tabular numbers for metric tracking.
+
+- **Metric & Quantitative Displays (`metric-display`):** Used in executive dashboard counters (e.g., patient metrics, currency totals). Tabular lining figures ensure stable vertical alignment in data tables.
+- **Headings (`headline-xl` through `headline-sm`):** Deliver strict anatomical hierarchy to clinical views. Tight negative tracking keeps larger headings compact and clinical.
+- **Labels & Forms (`label-lg` through `label-sm`):** Tuned for instant identification of tooth quadrant controls, input descriptions, and tooth anatomical numbers (11–48).
+
+## Layout & Spacing
+
+The layout is anchored by a structured desktop-first fluid grid optimized for medical dashboards, odontograms, and multi-column clinical notes.
+
+### Grid & Canvas Structure
+- **Master Container:** Fluid grid maxing at 1600px with a default `margin` of `1.5rem` (24px) on desktop, transitioning to `1rem` (16px) on tablet and mobile viewports.
+- **Odontogram Layout:** The dental quadrant diagram uses a fixed horizontal flow with `gutter-compact` (`0.5rem`) between adjacent teeth pairs and central sagittal spacing to distinguish quadrants (1st, 2nd, 3rd, and 4th).
+- **Metric Cards Grid:** Flexible 12-column setup reflowing from 6 cards wide on extra-wide screens, to 3 columns on desktop, 2 on tablet, and single-column stacked on mobile.
+
+### Responsive Behaviors
+- **Desktop (≥ 1280px):** Full tooth chart spans full width with individual anatomical root and crown diagrams horizontally laid out. Form fields follow a 3-column split (Date, Chief Complaints, History).
+- **Tablet (768px - 1279px):** Horizontal scrolling permitted on the anatomical tooth map while keeping condition filter badges sticky. Form controls wrap to 2 columns.
+- **Mobile (< 768px):** Navigation transitions to a slide-over drawer; tooth selections group into quadrant-based paginated carousels.
+
+## Elevation & Depth
+
+Visual hierarchy relies on crisp, low-contrast borders and subtle surface shading rather than pronounced drop shadows. This maintains a clean, paper-like clinical aesthetic that eliminates visual noise.
+
+### Layer Hierarchy
+1. **Level 0 (Canvas Base):** Plain `#FFFFFF` or `#F8FAFC` foundation.
+2. **Level 1 (Card & Module Surfaces):** Pure `#FFFFFF` containers bounded by an architectural 1px hairline border in `#E2E8F0`. Paired with an ultra-soft ambient shadow: `box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.03)`.
+3. **Level 2 (Dropdowns, Popovers, & Datepickers):** `#FFFFFF` surfaces with a 1px border (`#CBD5E1`) and directional elevation: `box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -4px rgba(15, 23, 42, 0.03)`.
+4. **Level 3 (Modals & Examination Drawers):** High-level overlay backed by an accessible backdrop scrim (`rgba(15, 23, 42, 0.40)`) with an elevated container shadow (`box-shadow: 0 20px 25px -5px rgba(15, 23, 42, 0.1)`).
+
+## Shapes
+
+The design system implements a **Rounded (Level 2)** shape standard. The radius hierarchy creates an approachable yet disciplined medical interface:
+
+- **Base Radius (`0.5rem` / 8px):** Standard input fields, tooth quadrant checkboxes, dropdown buttons, and table rows.
+- **Large Radius (`rounded-lg`, `1rem` / 16px):** Metric statistic cards, odontogram container frames, and floating notification modules.
+- **Pill Radius (`rounded-full`, `9999px`):** Top navigation tabs (e.g., "Normal Tooth Chart"), badge indicators, and odontogram quadrant check tags.
+
+## Components
+
+### Buttons
+- **Primary Clinical Action:** Background `#F97316`, white text (`#FFFFFF`), `rounded-lg`, padding `space-sm` `space-lg`. On hover: `#EA580C`. Focused: 2px ring offset with `rgba(249, 115, 22, 0.3)`.
+- **Secondary / Ghost:** Transparent background with 1px border in `#E2E8F0`, slate text (`#334155`). On hover: `#F8FAFC`.
+- **Icon Actions:** `36px` square modules, rounded `0.5rem`, holding icons centered in `#64748B`.
+
+### Navigation Tabs (Pill Style)
+- **Active Tab:** Filled with `#F97316` (or light tinted `#FFEDD5` for secondary views) with pure white text or dark orange text, pill-shaped (`rounded-full`), `space-xs` vertical and `space-md` horizontal padding.
+- **Inactive Tab:** Borderless, neutral muted `#64748B` typography, smooth transition on hover to `#1E293B`.
+
+### Form Fields & Inputs
+- **Base Style:** Bordered with 1px solid `#E2E8F0`, interior fill `#F8FAFC`, text `#1E293B`, rounded `0.5rem`.
+- **Focus State:** Background shifts to `#FFFFFF`, border changes to `#F97316` with a faint `3px` focus halo (`rgba(249, 115, 22, 0.15)`).
+- **Labels:** Set in `label-sm` with slate color `#334155` positioned 6px above the field.
+
+### Dental Examination Badges
+- Dot-style condition pills featuring a 8px circular color badge paired with `label-sm` text (`#334155`).
+- Active selection state toggles a soft surrounding pill fill matching 10% opacity of the condition color with an active 1px border.
+
+### Odontogram Interactive Tooth Elements
+- High-contrast anatomical vectors with clear division between crown segments (occlusal, incisal, mesial, distal, lingual, facial) and roots.
+- Default fill is neutral white (`#FFFFFF`) with dark `#334155` lines; diseased or noted surfaces fill with their designated condition color token.
+- Number labels (FDI numbering system) rendered in `label-md` tabular text centered directly below or above each tooth vector.
+
+### Data & Metric Cards
+- Background `#FFFFFF` encased in a crisp `#E2E8F0` hairline border, `1rem` border-radius.
+- Top line: `label-sm` title (`#64748B`).
+- Value: Large `metric-display` in `#1E293B`.
+- Trend status: Negative shifts in `#EF4444` with a downward arrow; positive increments in `#10B981` with an upward arrow.
+- Specialized Highlight Variant: Total revenue cards accept a full accent wash using `#F97316` background and `#FFFFFF` text.

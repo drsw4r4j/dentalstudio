@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-lowest": "#ffffff",
+          "on-surface": "#131b2e",
+          "surface-dim": "#d2d9f4",
+          "on-secondary": "#ffffff",
+          "surface-container-highest": "#dae2fd",
+          "on-secondary-fixed": "#0d1c2f",
+          "surface-container-low": "#f2f3ff",
+          "surface": "#faf8ff",
+          "on-tertiary-fixed-variant": "#3323cc",
+          "error-container": "#ffdad6",
+          "on-error": "#ffffff",
+          "on-tertiary": "#ffffff",
+          "inverse-surface": "#283044",
+          "on-primary": "#ffffff",
+          "primary-container": "#008378",
+          "on-secondary-fixed-variant": "#3a485c",
+          "inverse-primary": "#6bd8cb",
+          "surface-variant": "#dae2fd",
+          "on-tertiary-container": "#fffbff",
+          "on-primary-container": "#f4fffc",
+          "surface-bright": "#faf8ff",
+          "on-surface-variant": "#3d4947",
+          "on-tertiary-fixed": "#0f0069",
+          "primary-fixed": "#89f5e7",
+          "on-background": "#131b2e",
+          "tertiary": "#4b41e1",
+          "outline-variant": "#bcc9c6",
+          "on-error-container": "#93000a",
+          "tertiary-fixed-dim": "#c3c0ff",
+          "error": "#ba1a1a",
+          "primary-fixed-dim": "#6bd8cb",
+          "secondary-container": "#d5e3fd",
+          "on-primary-fixed-variant": "#005049",
+          "inverse-on-surface": "#eef0ff",
+          "on-secondary-container": "#57657b",
+          "tertiary-container": "#645efb",
+          "on-primary-fixed": "#00201d",
+          "outline": "#6d7a77",
+          "surface-tint": "#006a61",
+          "surface-container": "#eaedff",
+          "secondary-fixed": "#d5e3fd",
+          "background": "#faf8ff",
+          "surface-container-high": "#e2e7ff",
+          "tertiary-fixed": "#e2dfff",
+          "secondary-fixed-dim": "#b9c7e0",
+          "primary": "#00685f",
+          "secondary": "#515f74"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-lg": "1rem",
+          "space-md": "0.75rem",
+          "space-sm": "0.375rem",
+          "margin-desktop": "1rem",
+          "space-xs": "0.25rem",
+          "space-xl": "1.5rem",
+          "gutter-desktop": "1rem",
+          "gutter": "0.75rem",
+          "margin": "0.75rem"
+        },
+        "fontFamily": {
+          "body-md": [
+            "Inter"
+          ],
+          "code-sm": [
+            "monospace"
+          ],
+          "title-sm": [
+            "Inter"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "title-md": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "body-md": [
+            "0.8125rem",
+            {
+              "lineHeight": "1.1875rem",
+              "fontWeight": "400"
+            }
+          ],
+          "code-sm": [
+            "0.75rem",
+            {
+              "lineHeight": "1rem",
+              "fontWeight": "500"
+            }
+          ],
+          "title-sm": [
+            "0.875rem",
+            {
+              "lineHeight": "1.25rem",
+              "fontWeight": "600"
+            }
+          ],
+          "label-sm": [
+            "0.6875rem",
+            {
+              "lineHeight": "0.875rem",
+              "letterSpacing": "0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-sm": [
+            "0.75rem",
+            {
+              "lineHeight": "1rem",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-md": [
+            "1.25rem",
+            {
+              "lineHeight": "1.75rem",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "0.9375rem",
+            {
+              "lineHeight": "1.375rem",
+              "fontWeight": "400"
+            }
+          ],
+          "label-md": [
+            "0.75rem",
+            {
+              "lineHeight": "1rem",
+              "letterSpacing": "0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "title-md": [
+            "0.9375rem",
+            {
+              "lineHeight": "1.375rem",
+              "letterSpacing": "-0.005em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "1.5rem",
+            {
+              "lineHeight": "2rem",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "1.125rem",
+            {
+              "lineHeight": "1.5rem",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      }
+    }
+  };</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-lowest border-b border-outline-variant/30 z-50 flex items-center justify-between px-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md"><img alt="Docplix Dental EHR Workstation Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VeXeulZeGoFgWjsrrOuL-tcKB_IdOqG1_EnBFsaEAkNvVudJ30-oldLO3_XuYhNBb8rl7eikdSs2nfmSPNvN4mrCrBPuwao4tyxp5KAWN_aMwf9rt1ds3JKTLX7qQZEgS8XDbbPh40BFwMuh45g-TBLjpllqSr_M3s8sv7UqdV2HNlcJir1pCwR9FqbvS9G6pa_TMaZbOawKNQ-xCt147kulubruZEUsSrmFN3H39GxabrdpdgAV7oMw"/><div class="flex flex-col"><span class="font-title-sm text-title-sm text-primary leading-none font-bold">Docplix.Dental</span><span class="font-label-sm text-label-sm text-secondary leading-tight mt-0.5">ORAL &amp; DENTAL SURGERY WORKSTATION</span></div><div class="h-6 w-px bg-outline-variant/50 mx-space-xs"></div><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1 rounded border border-outline-variant/40"><span class="material-symbols-outlined text-[16px] text-primary">dentistry</span><span class="font-label-md text-label-md text-on-surface font-medium truncate max-w-[230px]">MetroCare - Dental Wing / Operatory 2</span><span class="material-symbols-outlined text-[16px] text-secondary">arrow_drop_down</span></div><div class="hidden xl:flex items-center gap-1.5 px-space-sm py-1 bg-surface-container-high rounded border border-outline-variant/40"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-sm text-label-sm text-primary font-semibold">Chair 1 / Operatory 2 Status:</span><span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Procedure in Progress</span></div></div><div class="flex-1 max-w-xl mx-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-2.5 text-[18px] text-outline">search</span><input class="w-full pl-8 pr-16 py-1.5 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:bg-surface-container-lowest transition-all" placeholder="Search patient by Name, UHID, Tooth #, or Mobile..." type="text"/><kbd class="absolute right-2 font-code-sm text-code-sm px-1.5 py-0.5 bg-surface-container-highest text-secondary border border-outline-variant/50 rounded">Ctrl + K</kbd></div></div><div class="flex items-center gap-space-sm"><button class="flex items-center gap-1 bg-error-container text-on-error-container font-label-md text-label-md px-2.5 py-1.5 rounded border border-error/20 hover:bg-error hover:text-on-error transition-colors"><span class="material-symbols-outlined text-[16px]">e911_emergency</span><span>Dental Emergency Walk-In</span></button><button class="relative p-1.5 text-secondary hover:text-on-surface hover:bg-surface-container-low rounded transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-4 h-4 bg-error text-on-error font-label-sm text-label-sm rounded-full flex items-center justify-center font-bold scale-90">2</span></button><div class="h-6 w-px bg-outline-variant/50"></div><div class="flex items-center gap-space-xs pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-primary/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcD4MwPD83PSlI5O2O7lFQ3fWI7KYSutc7NbEzc5cyyP_FVYLUfVBJR2bux1o5L1DAzfXlmW-tn2BEHTTSAR8D4jN7XS0LFHRDm60CEUK5LX4hyjI7e_Karmfv-MQ4TIBTmuz1JxMGjOcZB6spzfxQ9dTogGFUGGfa5UmhIoLLshwNRbu4-cj-nZe9AzILjRmyMg0fNih2Dj-OwCxqCZCGHHNz4xXMB10tcIsKh2E9Wxx_h0b5MiU"/><div class="hidden sm:flex flex-col text-left"><div class="flex items-center gap-1"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Dr. Sarah Jenkins</span><span class="material-symbols-outlined text-[14px] text-primary">verified</span></div><span class="font-label-sm text-label-sm text-secondary leading-none">BDS, MDS (Prostho &amp; Implantology)</span></div><button class="p-1 text-secondary hover:text-on-surface rounded" title="Doctor Profile &amp; Settings"><span class="material-symbols-outlined text-[18px]">more_vert</span></button></div></div></header><aside class="fixed left-0 top-16 bottom-7 w-64 bg-surface-container-lowest border-r border-outline-variant/30 z-40 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.02)]"><div class="flex flex-col py-space-xs"><div class="px-space-md py-space-xs"><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Dental Workstation</span></div><nav class="flex flex-col gap-0.5 px-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold border-l-4 border-primary"><a class="flex flex-col text-left px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dental-chart-patient-ehr" href="#"><span class="font-title-sm text-title-sm">Dental Chart &amp; Patient EHR</span><span class="font-label-sm text-label-sm text-secondary">Odontogram, Perio Chart &amp; Tx Plan</span></a><a class="flex flex-col text-left px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="operatory-queue-schedule" href="#"><span class="font-title-sm text-title-sm">Operatory &amp; Queue Schedule</span><span class="font-label-sm text-label-sm text-secondary">Dental Chairs &amp; Hygiene Workflow</span></a><a class="flex flex-col text-left px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dental-material-lab-billing" href="#"><span class="font-title-sm text-title-sm">Dental Material &amp; Lab Billing</span><span class="font-label-sm text-label-sm text-secondary">Labs, Implants/Crowns &amp; POS ERP</span></a><a class="flex flex-col text-left px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="patient-dental-crm-recall" href="#"><span class="font-title-sm text-title-sm">Patient Dental CRM &amp; Recall</span><span class="font-label-sm text-label-sm text-secondary">6-Mo Scaling &amp; Post-Op Reminders</span></a></nav></div><div class="p-space-sm m-space-xs bg-surface-container-low border border-outline-variant/30 rounded-lg"><div class="flex items-center justify-between text-secondary mb-1"><span class="font-label-sm text-label-sm uppercase font-semibold">Operatory 2 Load</span><span class="font-code-sm text-code-sm font-semibold text-primary">05h 15m</span></div><div class="flex items-center justify-between text-on-surface"><span class="font-body-sm text-body-sm">Procedures Done</span><span class="font-title-sm text-title-sm font-bold">9 / 14</span></div><div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-1.5 overflow-hidden"><div class="bg-primary h-full rounded-full" style="width: 64%"></div></div></div></aside><div class="pl-64"><main class="w-full pt-16 pb-7 bg-background min-h-screen"><div class="flex flex-col w-full">
+<div class="p-space-lg max-w-[1720px] mx-auto w-full space-y-space-lg">
+<!-- Top Action / Notification Ticker -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-md bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center gap-space-md min-w-0">
+<div class="w-10 h-10 rounded-lg bg-primary-container/15 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">cycle</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface truncate">Omni-Channel Dental CRM &amp; Hygiene Recall Engine</span>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-2 py-0.5 rounded-full">Automations Live</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary truncate">Automated WhatsApp, SMS, and IVR workflows synchronized with chair availability in Operatory 1 &amp; 2.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-label-md text-label-md px-3 py-2 rounded-lg flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+<span>Recall Cadence Settings</span>
+</button>
+<button class="bg-primary text-on-primary hover:bg-primary-container transition-colors font-label-md text-label-md px-3.5 py-2 rounded-lg flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-[16px]">send_time_extension</span>
+<span>Launch Targeted Broadcast</span>
+</button>
+</div>
+</div>
+<!-- KPI Matrix -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-primary/5 rounded-full blur-xl group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-center justify-between text-secondary mb-1">
+<span class="font-label-md text-label-md uppercase tracking-wider">Active Patient Roster</span>
+<span class="material-symbols-outlined text-[20px] text-primary">group</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">6,280</span>
+<span class="font-label-sm text-label-sm text-primary flex items-center font-semibold">
+<span class="material-symbols-outlined text-[14px]">trending_up</span>+4.8%
+          </span>
+</div>
+<div class="mt-3 flex items-center justify-between text-secondary">
+<span class="font-body-sm text-body-sm">Recall Eligible: 1,412 pts</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant font-medium">98.2% Reachable</span>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-tertiary/5 rounded-full blur-xl group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-center justify-between text-secondary mb-1">
+<span class="font-label-md text-label-md uppercase tracking-wider">6-Mo Hygiene Recall Rate</span>
+<span class="material-symbols-outlined text-[20px] text-tertiary">cleaning_services</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">84.2%</span>
+<span class="font-label-sm text-label-sm text-primary flex items-center font-semibold">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>+6.1% vs Q1
+          </span>
+</div>
+<div class="mt-3 w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 84.2%"></div>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-primary/10 rounded-full blur-xl group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-center justify-between text-secondary mb-1">
+<span class="font-label-md text-label-md uppercase tracking-wider">WhatsApp Confirmation</span>
+<span class="material-symbols-outlined text-[20px] text-primary">chat_bubble</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">96.5%</span>
+<span class="font-label-sm text-label-sm text-secondary flex items-center font-semibold">
+<span class="material-symbols-outlined text-[14px]">verified</span>1-Click Flow
+          </span>
+</div>
+<div class="mt-3 flex items-center justify-between text-secondary">
+<span class="font-body-sm text-body-sm">Avg Res time: 8.4 mins</span>
+<span class="font-code-sm text-code-sm text-primary font-bold">142 Today</span>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 w-24 h-24 bg-secondary-container/40 rounded-full blur-xl group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-center justify-between text-secondary mb-1">
+<span class="font-label-md text-label-md uppercase tracking-wider">Open Tx Plan Pipeline</span>
+<span class="material-symbols-outlined text-[20px] text-primary">clinical_notes</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg font-bold text-on-surface">$42,800</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">38 Pending</span>
+</div>
+<div class="mt-3 flex items-center justify-between text-secondary">
+<span class="font-body-sm text-body-sm">Nudge Conversions</span>
+<span class="font-code-sm text-code-sm text-on-surface-variant font-semibold">$14.2k Recaptured</span>
+</div>
+</div>
+</div>
+<!-- Main Workspace Layout: 3-Column Bento -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg">
+<!-- Left Column: Automated Journeys & Workflows (5 Cols) -->
+<div class="xl:col-span-5 space-y-space-md">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-space-md">
+<div>
+<span class="font-title-md text-title-md text-on-surface font-bold block">Active Dental Recall Journeys</span>
+<span class="font-label-sm text-label-sm text-secondary">Triggered automatically by clinical charting milestones</span>
+</div>
+<button class="text-primary hover:text-primary-container p-1 rounded transition-colors" title="Create New Custom Trigger">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+</button>
+</div>
+<div class="space-y-space-sm" id="workflow-list">
+<!-- Workflow 1 -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">dentistry</span>
+</div>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold block">Periodic 6-Mo Prophylaxis &amp; Exam</span>
+<span class="font-label-sm text-label-sm text-secondary">Trigger: 5.5 Months post last cleaning</span>
+</div>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm px-2 py-0.5 rounded font-bold">Active (482 Sent)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                Dispatches high-priority WhatsApp interactive booking card with direct slot reservation into Operatory 2 Hygiene chair.
+              </p>
+<div class="mt-3 flex items-center justify-between text-secondary">
+<span class="font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-primary">bolt</span> 78.4% Booked in &lt; 24h
+                </span>
+<span class="font-code-sm text-code-sm text-primary font-medium">Preview Template →</span>
+</div>
+</div>
+<!-- Workflow 2 -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded bg-error-container/40 flex items-center justify-center text-error shrink-0">
+<span class="material-symbols-outlined text-[18px]">healing</span>
+</div>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold block">Tooth Extraction 24-Hour Check</span>
+<span class="font-label-sm text-label-sm text-secondary">Trigger: 24h post Oral Surgery/Extraction</span>
+</div>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm px-2 py-0.5 rounded font-bold">Active (18 Sent)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                Automated care checklist: No forceful spitting, ice compress, salt water rinse reminders, and subjective 1–5 pain scale probe.
+              </p>
+<div class="mt-3 flex items-center justify-between text-secondary">
+<span class="font-label-sm text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-error">flag</span> Alert sent if pain &gt; 3
+                </span>
+<span class="font-code-sm text-code-sm text-primary font-medium">Rule Config →</span>
+</div>
+</div>
+<!-- Workflow 3 -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded bg-secondary-container flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[18px]">assignment_late</span>
+</div>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold block">Pending Treatment Plan Nudge</span>
+<span class="font-label-sm text-label-sm text-secondary">Trigger: Unscheduled Rx &gt; 7 days old</span>
+</div>
+</div>
+<span class="bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm px-2 py-0.5 rounded font-bold">Paused for Review</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                Follows up with diagnosed dental caries, crown preps, and root canal recommendations that left clinic without booking.
+              </p>
+<div class="mt-3 flex items-center justify-between text-secondary">
+<span class="font-label-sm text-label-sm">Recaptured $14.2k this month</span>
+<span class="font-code-sm text-code-sm text-primary font-medium">Pipeline: 38 Pts →</span>
+</div>
+</div>
+<!-- Workflow 4 -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded bg-tertiary-container/20 flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-[18px]">sync_alt</span>
+</div>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold block">Invisalign / Clear Aligner Tray Alert</span>
+<span class="font-label-sm text-label-sm text-secondary">Trigger: 10-Day Orthodontic cycle</span>
+</div>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm px-2 py-0.5 rounded font-bold">Active (94 Patients)</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                Sends automated prompt: "Time to switch to Aligner #06 today! Submit intraoral photo for Dr. Jenkins' verification."
+              </p>
+<div class="mt-3 flex items-center justify-between text-secondary">
+<span class="font-label-sm text-label-sm">92% Compliance</span>
+<span class="font-code-sm text-code-sm text-primary font-medium">Tracker →</span>
+</div>
+</div>
+<!-- Workflow 5 -->
+<div class="p-space-md rounded-lg bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer">
+<div class="flex items-start justify-between gap-space-sm">
+<div class="flex items-center gap-space-xs">
+<div class="w-8 h-8 rounded bg-primary/10 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[18px]">inventory_2</span>
+</div>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold block">Crown / Lab Delivery Seating Alert</span>
+<span class="font-label-sm text-label-sm text-secondary">Trigger: Lab Barcode QC Scan complete</span>
+</div>
+</div>
+<span class="bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm px-2 py-0.5 rounded font-bold">Active</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-2">
+                Immediately notifies patient when zirconia crown / implant abutment arrives from dental lab: "Your permanent crown is ready."
+              </p>
+<div class="mt-3 flex items-center justify-between text-secondary">
+<span class="font-label-sm text-label-sm">Turnaround: 3.2 days</span>
+<span class="font-code-sm text-code-sm text-primary font-medium">Lab Status →</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Center Column: Patient Communications Desk & Live Chat (4 Cols) -->
+<div class="xl:col-span-4 space-y-space-md flex flex-col">
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex-1 flex flex-col justify-between">
+<div>
+<!-- Chat Header -->
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container-high">
+<div class="flex items-center gap-space-xs">
+<div class="relative">
+<img class="w-10 h-10 rounded-full object-cover" data-alt="Portrait photo of dental patient Eleanor Vance, 34-year-old female with a bright warm smile, soft clinical lighting, clear natural skin, wearing casual blue sweater." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqIKef-hOJP9LstdGrStiTL-HrxR_p-EfPvsdDYNUp0KGkzOFiOA1phgJncJzD_znDEaDW4dEeRAV-7I0lVB0m7UbVr8cYVJk7G0EBiYjnvatfP3Irp0lS6aQ5spbTWRbjHLwksVpBrvqYd-_MDo1n2q4FdhdxUWNB0_r0Z8_rU4ZY0S1xcXfC5PpvTbV_XRkSJGLjIyIC1tO3XvpPonNim_HkgbdzXMCIkx243ovCbpdZ487PUhc"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-primary rounded-full ring-2 ring-surface-container-lowest"></span>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">Eleanor Vance</span>
+<span class="font-code-sm text-code-sm text-secondary">UHID: DP-8831</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]">schedule</span> Post-Op RCT #26 Follow-up
+                  </span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="p-1 text-secondary hover:text-on-surface rounded" title="Patient Chart">
+<span class="material-symbols-outlined text-[18px]">account_box</span>
+</button>
+<button class="p-1 text-secondary hover:text-on-surface rounded" title="Call Patient">
+<span class="material-symbols-outlined text-[18px]">phone</span>
+</button>
+</div>
+</div>
+<!-- Chat Stream -->
+<div class="py-space-md space-y-space-md max-h-[440px] overflow-y-auto pr-1" id="chat-messages">
+<!-- Timestamp divider -->
+<div class="flex items-center justify-center">
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container-high px-2 py-0.5 rounded-full">Today, 09:30 AM (24h Post-Op)</span>
+</div>
+<!-- Automated Message from Bot -->
+<div class="flex gap-2 max-w-[85%]">
+<div class="w-6 h-6 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0 text-[12px]">
+<span class="material-symbols-outlined text-[12px]">smart_toy</span>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded-lg rounded-tl-none">
+<span class="font-label-sm text-label-sm text-primary font-bold block mb-0.5">Docplix Dental Bot (Auto-Nudge)</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+                    Good morning Eleanor! 👋 Dr. Sarah Jenkins is checking in on your Tooth #26 root canal from yesterday. How is the tenderness right now on a scale of 1 to 5?
+                  </p>
+<span class="font-code-sm text-code-sm text-secondary text-[10px] mt-1 block text-right">09:30 AM • WhatsApp API</span>
+</div>
+</div>
+<!-- Patient Reply -->
+<div class="flex gap-2 max-w-[85%] ml-auto justify-end">
+<div class="bg-secondary-container/60 p-space-sm rounded-lg rounded-tr-none">
+<span class="font-label-sm text-label-sm text-on-secondary-container font-semibold block mb-0.5">Eleanor Vance</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+                    Mild tenderness when tapping (around a 2), but the throbbing pain is completely gone! Can I chew normal food today?
+                  </p>
+<span class="font-code-sm text-code-sm text-secondary text-[10px] mt-1 block text-right">09:44 AM</span>
+</div>
+</div>
+<!-- Doctor Manual Snippet Response -->
+<div class="flex gap-2 max-w-[85%]">
+<img class="w-6 h-6 rounded-full object-cover shrink-0" data-alt="Portrait of Dr. Sarah Jenkins, professional female dentist in dental scrubs with stethoscope and warm authoritative demeanor in modern dental clinic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXFeN_3f-yDeje8BBkdUQNyJAQKp5ws5uZhpFAn6xBgrzvKJ27LmajwiCNUJxHdh44jVZIEUj-euFuCFbNh-wV87zQ-EgdI_nAx9J_5kesIzVaYQd_Z799biGEPCkiIXvQCmlxONmC9HHX4FBCxB74ty2WfYLPNtbHVsT5fdl7xCYdYeW2Mt2ddxkdpWl2mwcjyw9oDR9CW51sQbp6lV3bCDjxbU1bS4s_MUArjAECpf03x3T5itk"/>
+<div class="bg-surface-container-high p-space-sm rounded-lg rounded-tl-none">
+<span class="font-label-sm text-label-sm text-on-surface font-bold block mb-0.5">Dr. Sarah Jenkins (You)</span>
+<p class="font-body-sm text-body-sm text-on-surface">
+                    That is completely normal for 48h after the canal disinfection. Please keep chewing on the opposite side until we place your permanent crown next week!
+                  </p>
+<span class="font-code-sm text-code-sm text-secondary text-[10px] mt-1 block text-right">10:02 AM • Read</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Response Snippets & Input Box -->
+<div class="pt-space-sm border-t border-surface-container-high space-y-space-xs">
+<span class="font-label-sm text-label-sm text-secondary block">Doctor Clinical Snippets:</span>
+<div class="flex flex-wrap gap-1.5">
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-2 py-1 rounded transition-colors" onclick="insertSnippet('Normal for 48h after canal cleaning.')">
+                + "Normal for 48h"
+              </button>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-2 py-1 rounded transition-colors" onclick="insertSnippet('Take prescribed Ketorolac 10mg with meals.')">
+                + "Ketorolac with food"
+              </button>
+<button class="bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm px-2 py-1 rounded transition-colors" onclick="insertSnippet('Warm salt water rinse (1/2 tsp in 1 cup water).')">
+                + "Warm salt water"
+              </button>
+</div>
+<div class="relative mt-2">
+<textarea class="w-full p-2 text-body-sm font-body-sm bg-surface-container-low rounded-lg focus:outline-none focus:bg-surface-container-lowest text-on-surface resize-none placeholder:text-outline" id="chat-input" placeholder="Type clinical response or use macro (/rx, /crown)..." rows="2"></textarea>
+<div class="flex items-center justify-between mt-1">
+<div class="flex items-center gap-1 text-secondary">
+<button class="p-1 hover:text-primary rounded"><span class="material-symbols-outlined text-[16px]">attach_file</span></button>
+<button class="p-1 hover:text-primary rounded"><span class="material-symbols-outlined text-[16px]">medication</span></button>
+<button class="p-1 hover:text-primary rounded"><span class="material-symbols-outlined text-[16px]">mic</span></button>
+</div>
+<button class="bg-primary hover:bg-primary-container text-on-primary px-3 py-1 rounded font-label-md text-label-md flex items-center gap-1 shadow-sm" onclick="sendMessage()">
+<span>Send</span>
+<span class="material-symbols-outlined text-[14px]">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Live Mobile WhatsApp Preview & Google Reviews (3 Cols) -->
+<div class="xl:col-span-3 space-y-space-md">
+<!-- Live Mobile Simulator Box -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-title-sm text-title-sm text-on-surface font-bold">Interactive Recipient View</span>
+<span class="bg-primary/10 text-primary font-code-sm text-code-sm px-1.5 py-0.5 rounded">WhatsApp API</span>
+</div>
+<!-- Mock Phone Chassis -->
+<div class="w-full max-w-[290px] mx-auto bg-surface-container-highest p-2 rounded-2xl shadow-md">
+<!-- Screen Header -->
+<div class="bg-primary text-on-primary p-2.5 rounded-t-xl flex items-center justify-between">
+<div class="flex items-center gap-1.5 min-w-0">
+<span class="material-symbols-outlined text-[16px]">arrow_back</span>
+<div class="w-6 h-6 rounded-full bg-on-primary text-primary flex items-center justify-center font-bold text-[10px] shrink-0">
+                  D
+                </div>
+<div class="min-w-0">
+<div class="flex items-center gap-1">
+<span class="font-label-sm text-label-sm text-on-primary font-bold truncate">Docplix Dental</span>
+<span class="material-symbols-outlined text-[12px] text-primary-fixed">verified</span>
+</div>
+<span class="font-code-sm text-code-sm text-on-primary/70 text-[9px] block">Verified Business</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-[16px]">more_vert</span>
+</div>
+<!-- WhatsApp Message Bubble -->
+<div class="bg-[#e5ddd5] p-2 space-y-2 min-h-[310px] rounded-b-xl flex flex-col justify-end">
+<div class="bg-surface-container-lowest p-2.5 rounded-lg shadow-sm text-on-surface space-y-2 text-left">
+<!-- Message Image -->
+<img class="w-full h-24 object-cover rounded" data-alt="High quality professional clinical photo of modern spotless dental hygiene station with ultrasonic scaler and dental mirror ready for preventive exam in clean bright lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuApS_YbPC9GUiHFTwlIYdS8eGqYow4ycV8lGPTvW4ywAE9PcZaqvXFfBUJubfQSKkXWd_5EFQKn5pG2ug82xD49BszyxT5dLgm2AyqdoFBsXaiTBsRBQTEHF9wcI_0ZmxY0VNjHIspA7gk-qpJT6IWipLbjmVnMeiPdEjq99ZlTiy0TKpkVFbWBNEp9VKUPqhd2pSS08fu8w1qc57nb6kRKrvhz_NVFXgzVcE6bakVLOaCIPabUC54"/>
+<div>
+<span class="font-title-sm text-title-sm font-bold text-on-surface block leading-tight">6-Month Dental Cleaning Due! 🪥</span>
+<p class="font-body-sm text-body-sm text-secondary text-[11px] mt-1 leading-snug">
+                    Hi Eleanor! It has been 5.5 months since your last scaling with Dr. Jenkins. Prevent plaque buildup and maintain healthy gums.
+                  </p>
+</div>
+<!-- Interactive CTA Buttons -->
+<div class="space-y-1.5 pt-1">
+<button class="w-full py-1.5 bg-primary text-on-primary rounded font-label-md text-label-md text-center hover:bg-primary-container transition-all flex items-center justify-center gap-1" id="cta-confirm-btn" onclick="toggleConfirmedState()">
+<span class="material-symbols-outlined text-[14px]">calendar_today</span>
+<span id="cta-text">Book Scaling Slot</span>
+</button>
+<button class="w-full py-1 bg-surface-container-low text-secondary rounded font-label-sm text-label-sm text-center hover:bg-surface-container transition-all">
+                    Reschedule or Change Date
+                  </button>
+<button class="w-full py-1 bg-surface-container-low text-secondary rounded font-label-sm text-label-sm text-center hover:bg-surface-container transition-all flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[13px]">picture_as_pdf</span>
+                    Read Post-Op Dental Care PDF
+                  </button>
+</div>
+<div class="flex items-center justify-between text-secondary pt-0.5">
+<span class="font-code-sm text-code-sm text-[9px]">Chair: Operatory 2</span>
+<span class="font-code-sm text-code-sm text-[9px]">Delivered • 09:31 AM</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-space-sm p-space-xs bg-surface-container-low rounded-lg text-center">
+<span class="font-label-sm text-label-sm text-secondary">Dynamic parameters injected: <code class="text-primary font-code-sm text-code-sm">{patient_name}</code>, <code class="text-primary font-code-sm text-code-sm">{dr_name}</code></span>
+</div>
+</div>
+<!-- Patient CSAT & Google Review Booster Card -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-title-sm text-title-sm text-on-surface font-bold block">Patient CSAT &amp; Google Reviews</span>
+<span class="font-label-sm text-label-sm text-secondary">Auto-prompt sent 2h post completed painless visits</span>
+</div>
+<div class="flex items-center gap-1 bg-primary/10 text-primary px-2 py-0.5 rounded font-bold font-code-sm text-code-sm">
+<span class="material-symbols-outlined text-[14px] text-[#f59e0b]" style="font-variation-settings: 'FILL' 1;">star</span> 4.96
+            </div>
+</div>
+<div class="space-y-space-xs">
+<!-- Review 1 -->
+<div class="p-space-xs bg-surface-container-low rounded-lg">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">Mark T. • Root Canal #14</span>
+<div class="flex text-[#f59e0b]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic mt-1">
+                "Completely painless root canal! Dr. Jenkins and the assistant explained every single step. Got automatic WhatsApp post-care reminders the next morning."
+              </p>
+<div class="flex items-center justify-between text-secondary mt-1">
+<span class="font-code-sm text-code-sm text-[10px]">Verified Google Review</span>
+<span class="font-code-sm text-code-sm text-[10px]">Yesterday</span>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="p-space-xs bg-surface-container-low rounded-lg">
+<div class="flex items-center justify-between">
+<span class="font-title-sm text-title-sm font-semibold text-on-surface">Priya Sharma • Invisalign Check</span>
+<div class="flex text-[#f59e0b]">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant italic mt-1">
+                "Gentle chairside manners and super clean operatory. The tray change notifications every 10 days keep my orthodontic progress on track!"
+              </p>
+<div class="flex items-center justify-between text-secondary mt-1">
+<span class="font-code-sm text-code-sm text-[10px]">Verified Google Review</span>
+<span class="font-code-sm text-code-sm text-[10px]">3 days ago</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between text-secondary pt-1">
+<span class="font-label-sm text-label-sm font-medium">84 New Reviews this month</span>
+<button class="font-label-sm text-label-sm text-primary font-bold hover:underline">Reputation Hub →</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Panoramic Section: Open Treatment Plan Pipeline & Hygiene Recapture Table -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm mb-space-md">
+<div>
+<span class="font-headline-sm text-headline-sm text-on-surface font-bold block">Open Treatment Plan Pipeline ($42,800 Active)</span>
+<span class="font-body-sm text-body-sm text-secondary">Patients diagnosed with restorative, prosthetic, or periodontal needs without confirmed appointments</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex items-center bg-surface-container-low px-2 py-1 rounded text-secondary font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] mr-1 text-primary">filter_alt</span>
+<span>Filter: Unscheduled &gt; 14 Days</span>
+</div>
+<button class="bg-primary text-on-primary px-3 py-1.5 rounded font-label-md text-label-md flex items-center gap-1 hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-[16px]">mark_email_read</span>
+<span>Auto-Nudge All (38 Pts)</span>
+</button>
+</div>
+</div>
+<!-- High Density Clinical Data Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-secondary font-label-sm text-label-sm uppercase">
+<th class="py-2 px-3 rounded-l">Patient Name &amp; ID</th>
+<th class="py-2 px-3">Diagnosed Tooth &amp; Procedure</th>
+<th class="py-2 px-3">Est. Value</th>
+<th class="py-2 px-3">Days Since Exam</th>
+<th class="py-2 px-3">Automated Cadence Stage</th>
+<th class="py-2 px-3">Patient Sentiment</th>
+<th class="py-2 px-3 text-right rounded-r">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container-high text-body-sm font-body-sm text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-2.5 px-3">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary font-code-sm text-code-sm">RG</div>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold block">Rajesh Gupta</span>
+<span class="font-code-sm text-code-sm text-secondary">UHID: DP-9104</span>
+</div>
+</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-title-sm text-title-sm font-medium">#46 Zirconia Crown (Post-Endo)</span>
+<span class="font-label-sm text-label-sm text-secondary block">Endo complete 12 days ago</span>
+</td>
+<td class="py-2.5 px-3 font-code-sm text-code-sm font-bold text-on-surface">$1,250</td>
+<td class="py-2.5 px-3">
+<span class="bg-error-container text-on-error-container font-label-sm text-label-sm px-2 py-0.5 rounded font-bold">12 Days Overdue</span>
+</td>
+<td class="py-2.5 px-3">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span>WhatsApp Nudge #2 Sent (Yesterday)</span>
+</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-2 py-0.5 rounded">Opened link • Viewing Slot</span>
+</td>
+<td class="py-2.5 px-3 text-right">
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-semibold px-2 py-1 rounded hover:bg-surface-container">
+                  Direct Call
+                </button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-2.5 px-3">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary font-code-sm text-code-sm">ML</div>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold block">Michael Liu</span>
+<span class="font-code-sm text-code-sm text-secondary">UHID: DP-7622</span>
+</div>
+</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-title-sm text-title-sm font-medium">Quadrant 1 &amp; 4 Deep Scaling &amp; Root Planing</span>
+<span class="font-label-sm text-label-sm text-secondary block">Perio pockets 5-6mm recorded</span>
+</td>
+<td class="py-2.5 px-3 font-code-sm text-code-sm font-bold text-on-surface">$980</td>
+<td class="py-2.5 px-3">
+<span class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2 py-0.5 rounded font-semibold">18 Days</span>
+</td>
+<td class="py-2.5 px-3">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Educational Video: "Perio Disease Impact"</span>
+</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-label-sm text-label-sm text-primary font-semibold">Watched 100% video</span>
+</td>
+<td class="py-2.5 px-3 text-right">
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-semibold px-2 py-1 rounded hover:bg-surface-container">
+                  Send Booking Link
+                </button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/60 transition-colors">
+<td class="py-2.5 px-3">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-surface-container-high flex items-center justify-center font-bold text-primary font-code-sm text-code-sm">AK</div>
+<div>
+<span class="font-title-sm text-title-sm text-on-surface font-semibold block">Ananya Kapoor</span>
+<span class="font-code-sm text-code-sm text-secondary">UHID: DP-4429</span>
+</div>
+</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-title-sm text-title-sm font-medium">#11, #21 Ceramic Veneers (Esthetic Rehab)</span>
+<span class="font-label-sm text-label-sm text-secondary block">Digital Smile Design previewed</span>
+</td>
+<td class="py-2.5 px-3 font-code-sm text-code-sm font-bold text-on-surface">$2,400</td>
+<td class="py-2.5 px-3">
+<span class="bg-surface-container-high text-on-surface font-label-sm text-label-sm px-2 py-0.5 rounded font-semibold">6 Days</span>
+</td>
+<td class="py-2.5 px-3">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>Financial Plan / EMI Options Nudge</span>
+</div>
+</td>
+<td class="py-2.5 px-3">
+<span class="font-label-sm text-label-sm text-secondary bg-surface-container px-2 py-0.5 rounded">Requested 0% EMI details</span>
+</td>
+<td class="py-2.5 px-3 text-right">
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-semibold px-2 py-1 rounded hover:bg-surface-container">
+                  Send EMI Link
+                </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function insertSnippet(text) {
+    const input = document.getElementById('chat-input');
+    if (input) {
+      input.value = text;
+      input.focus();
+    }
+  }
+
+  function sendMessage() {
+    const input = document.getElementById('chat-input');
+    const container = document.getElementById('chat-messages');
+    if (!input || !input.value.trim() || !container) return;
+
+    const val = input.value.trim();
+    const newMsg = document.createElement('div');
+    newMsg.className = 'flex gap-2 max-w-[85%] animate-fade-in';
+    newMsg.innerHTML = `
+      <img src="placeholder" data-alt="Portrait photo of Dr. Sarah Jenkins" class="w-6 h-6 rounded-full object-cover shrink-0">
+      <div class="bg-surface-container-high p-space-sm rounded-lg rounded-tl-none">
+        <span class="font-label-sm text-label-sm text-on-surface font-bold block mb-0.5">Dr. Sarah Jenkins (You)</span>
+        <p class="font-body-sm text-body-sm text-on-surface">${val}</p>
+        <span class="font-code-sm text-code-sm text-secondary text-[10px] mt-1 block text-right">Just now &bull; Sent via Docplix Desk</span>
+      </div>
+    `;
+    container.appendChild(newMsg);
+    input.value = '';
+    container.scrollTop = container.scrollHeight;
+  }
+
+  function toggleConfirmedState() {
+    const btn = document.getElementById('cta-confirm-btn');
+    const text = document.getElementById('cta-text');
+    if (btn && text) {
+      if (text.innerText.includes('Book Scaling')) {
+        text.innerText = 'Appointment Reserved (Operatory 2)';
+        btn.classList.remove('bg-primary');
+        btn.classList.add('bg-tertiary');
+      } else {
+        text.innerText = 'Book Scaling Slot';
+        btn.classList.remove('bg-tertiary');
+        btn.classList.add('bg-primary');
+      }
+    }
+  }
+</script></main></div><footer class="fixed bottom-0 left-0 right-0 h-7 bg-surface-container-lowest border-t border-outline-variant/30 z-50 flex items-center justify-between px-space-md"><div class="flex items-center gap-space-md text-on-surface-variant font-label-sm text-label-sm"><div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span><span>Dental Cloud Sync: 99.99% Real-time</span></div><div class="h-3 w-px bg-outline-variant/60"></div><div class="flex items-center gap-1 text-on-surface font-medium"><span class="material-symbols-outlined text-[14px] text-primary">chair</span><span>Current Chair: <strong class="text-primary">Operatory 2 (A-dec 500)</strong></span></div><div class="h-3 w-px bg-outline-variant/60"></div><div class="flex items-center gap-1 text-on-surface font-medium"><span class="material-symbols-outlined text-[14px] text-secondary">record_voice_over</span><span>Next Up: <strong class="text-tertiary">Token D-14</strong> (R. Gupta - Crown Prep #46)</span></div></div><div class="flex items-center gap-space-md text-secondary font-label-sm text-label-sm"><span class="font-code-sm text-code-sm">Docplix-DENT v4.2.1-OMS</span><div class="h-3 w-px bg-outline-variant/60"></div><span class="font-code-sm text-code-sm text-on-surface font-semibold">IST 11:42:18 AM</span></div></footer></body></html>

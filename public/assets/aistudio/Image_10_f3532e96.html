@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-lowest": "#ffffff",
+          "on-surface": "#131b2e",
+          "surface-dim": "#d2d9f4",
+          "on-secondary": "#ffffff",
+          "surface-container-highest": "#dae2fd",
+          "on-secondary-fixed": "#0d1c2f",
+          "surface-container-low": "#f2f3ff",
+          "surface": "#faf8ff",
+          "on-tertiary-fixed-variant": "#3323cc",
+          "error-container": "#ffdad6",
+          "on-error": "#ffffff",
+          "on-tertiary": "#ffffff",
+          "inverse-surface": "#283044",
+          "on-primary": "#ffffff",
+          "primary-container": "#008378",
+          "on-secondary-fixed-variant": "#3a485c",
+          "inverse-primary": "#6bd8cb",
+          "surface-variant": "#dae2fd",
+          "on-tertiary-container": "#fffbff",
+          "on-primary-container": "#f4fffc",
+          "surface-bright": "#faf8ff",
+          "on-surface-variant": "#3d4947",
+          "on-tertiary-fixed": "#0f0069",
+          "primary-fixed": "#89f5e7",
+          "on-background": "#131b2e",
+          "tertiary": "#4b41e1",
+          "outline-variant": "#bcc9c6",
+          "on-error-container": "#93000a",
+          "tertiary-fixed-dim": "#c3c0ff",
+          "error": "#ba1a1a",
+          "primary-fixed-dim": "#6bd8cb",
+          "secondary-container": "#d5e3fd",
+          "on-primary-fixed-variant": "#005049",
+          "inverse-on-surface": "#eef0ff",
+          "on-secondary-container": "#57657b",
+          "tertiary-container": "#645efb",
+          "on-primary-fixed": "#00201d",
+          "outline": "#6d7a77",
+          "surface-tint": "#006a61",
+          "surface-container": "#eaedff",
+          "secondary-fixed": "#d5e3fd",
+          "background": "#faf8ff",
+          "surface-container-high": "#e2e7ff",
+          "tertiary-fixed": "#e2dfff",
+          "secondary-fixed-dim": "#b9c7e0",
+          "primary": "#00685f",
+          "secondary": "#515f74"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "space-lg": "1rem",
+          "space-md": "0.75rem",
+          "space-sm": "0.375rem",
+          "margin-desktop": "1rem",
+          "space-xs": "0.25rem",
+          "space-xl": "1.5rem",
+          "gutter-desktop": "1rem",
+          "gutter": "0.75rem",
+          "margin": "0.75rem"
+        },
+        "fontFamily": {
+          "body-md": [
+            "Inter"
+          ],
+          "code-sm": [
+            "monospace"
+          ],
+          "title-sm": [
+            "Inter"
+          ],
+          "label-sm": [
+            "Inter"
+          ],
+          "body-sm": [
+            "Inter"
+          ],
+          "headline-md": [
+            "Inter"
+          ],
+          "body-lg": [
+            "Inter"
+          ],
+          "label-md": [
+            "Inter"
+          ],
+          "title-md": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "headline-sm": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "body-md": [
+            "0.8125rem",
+            {
+              "lineHeight": "1.1875rem",
+              "fontWeight": "400"
+            }
+          ],
+          "code-sm": [
+            "0.75rem",
+            {
+              "lineHeight": "1rem",
+              "fontWeight": "500"
+            }
+          ],
+          "title-sm": [
+            "0.875rem",
+            {
+              "lineHeight": "1.25rem",
+              "fontWeight": "600"
+            }
+          ],
+          "label-sm": [
+            "0.6875rem",
+            {
+              "lineHeight": "0.875rem",
+              "letterSpacing": "0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-sm": [
+            "0.75rem",
+            {
+              "lineHeight": "1rem",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-md": [
+            "1.25rem",
+            {
+              "lineHeight": "1.75rem",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-lg": [
+            "0.9375rem",
+            {
+              "lineHeight": "1.375rem",
+              "fontWeight": "400"
+            }
+          ],
+          "label-md": [
+            "0.75rem",
+            {
+              "lineHeight": "1rem",
+              "letterSpacing": "0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "title-md": [
+            "0.9375rem",
+            {
+              "lineHeight": "1.375rem",
+              "letterSpacing": "-0.005em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "1.5rem",
+            {
+              "lineHeight": "2rem",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "1.125rem",
+            {
+              "lineHeight": "1.5rem",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ]
+        }
+      }
+    }
+  };</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-lowest border-b border-outline-variant/30 z-50 flex items-center justify-between px-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md"><img alt="Docplix Dental EHR Workstation Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VeXeulZeGoFgWjsrrOuL-tcKB_IdOqG1_EnBFsaEAkNvVudJ30-oldLO3_XuYhNBb8rl7eikdSs2nfmSPNvN4mrCrBPuwao4tyxp5KAWN_aMwf9rt1ds3JKTLX7qQZEgS8XDbbPh40BFwMuh45g-TBLjpllqSr_M3s8sv7UqdV2HNlcJir1pCwR9FqbvS9G6pa_TMaZbOawKNQ-xCt147kulubruZEUsSrmFN3H39GxabrdpdgAV7oMw"/><div class="flex flex-col"><span class="font-title-sm text-title-sm text-primary leading-none font-bold">Docplix.Dental</span><span class="font-label-sm text-label-sm text-secondary leading-tight mt-0.5">ORAL &amp; DENTAL SURGERY WORKSTATION</span></div><div class="h-6 w-px bg-outline-variant/50 mx-space-xs"></div><div class="flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1 rounded border border-outline-variant/40"><span class="material-symbols-outlined text-[16px] text-primary">dentistry</span><span class="font-label-md text-label-md text-on-surface font-medium truncate max-w-[230px]">MetroCare - Dental Wing / Operatory 2</span><span class="material-symbols-outlined text-[16px] text-secondary">arrow_drop_down</span></div><div class="hidden xl:flex items-center gap-1.5 px-space-sm py-1 bg-surface-container-high rounded border border-outline-variant/40"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span class="font-label-sm text-label-sm text-primary font-semibold">Chair 1 / Operatory 2 Status:</span><span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Procedure in Progress</span></div></div><div class="flex-1 max-w-xl mx-space-md"><div class="relative flex items-center"><span class="material-symbols-outlined absolute left-2.5 text-[18px] text-outline">search</span><input class="w-full pl-8 pr-16 py-1.5 bg-surface-container-low border border-outline-variant rounded font-body-sm text-body-sm text-on-surface placeholder:text-outline focus:outline-none focus:border-primary focus:bg-surface-container-lowest transition-all" placeholder="Search patient by Name, UHID, Tooth #, or Mobile..." type="text"/><kbd class="absolute right-2 font-code-sm text-code-sm px-1.5 py-0.5 bg-surface-container-highest text-secondary border border-outline-variant/50 rounded">Ctrl + K</kbd></div></div><div class="flex items-center gap-space-sm"><button class="flex items-center gap-1 bg-error-container text-on-error-container font-label-md text-label-md px-2.5 py-1.5 rounded border border-error/20 hover:bg-error hover:text-on-error transition-colors"><span class="material-symbols-outlined text-[16px]">e911_emergency</span><span>Dental Emergency Walk-In</span></button><button class="relative p-1.5 text-secondary hover:text-on-surface hover:bg-surface-container-low rounded transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1 right-1 w-4 h-4 bg-error text-on-error font-label-sm text-label-sm rounded-full flex items-center justify-center font-bold scale-90">2</span></button><div class="h-6 w-px bg-outline-variant/50"></div><div class="flex items-center gap-space-xs pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-primary/30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcD4MwPD83PSlI5O2O7lFQ3fWI7KYSutc7NbEzc5cyyP_FVYLUfVBJR2bux1o5L1DAzfXlmW-tn2BEHTTSAR8D4jN7XS0LFHRDm60CEUK5LX4hyjI7e_Karmfv-MQ4TIBTmuz1JxMGjOcZB6spzfxQ9dTogGFUGGfa5UmhIoLLshwNRbu4-cj-nZe9AzILjRmyMg0fNih2Dj-OwCxqCZCGHHNz4xXMB10tcIsKh2E9Wxx_h0b5MiU"/><div class="hidden sm:flex flex-col text-left"><div class="flex items-center gap-1"><span class="font-label-md text-label-md text-on-surface font-semibold leading-tight">Dr. Sarah Jenkins</span><span class="material-symbols-outlined text-[14px] text-primary">verified</span></div><span class="font-label-sm text-label-sm text-secondary leading-none">BDS, MDS (Prostho &amp; Implantology)</span></div><button class="p-1 text-secondary hover:text-on-surface rounded" title="Doctor Profile &amp; Settings"><span class="material-symbols-outlined text-[18px]">more_vert</span></button></div></div></header><aside class="fixed left-0 top-16 bottom-7 w-64 bg-surface-container-lowest border-r border-outline-variant/30 z-40 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.02)]"><div class="flex flex-col py-space-xs"><div class="px-space-md py-space-xs"><span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider font-semibold">Dental Workstation</span></div><nav class="flex flex-col gap-0.5 px-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-semibold border-l-4 border-primary"><a class="flex flex-col text-left px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dental-chart-patient-ehr" href="#"><span class="font-title-sm text-title-sm">Dental Chart &amp; Patient EHR</span><span class="font-label-sm text-label-sm text-secondary">Odontogram, Perio Chart &amp; Tx Plan</span></a><a class="flex flex-col text-left px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="operatory-queue-schedule" href="#"><span class="font-title-sm text-title-sm">Operatory &amp; Queue Schedule</span><span class="font-label-sm text-label-sm text-secondary">Dental Chairs &amp; Hygiene Workflow</span></a><a class="flex flex-col text-left px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dental-material-lab-billing" href="#"><span class="font-title-sm text-title-sm">Dental Material &amp; Lab Billing</span><span class="font-label-sm text-label-sm text-secondary">Labs, Implants/Crowns &amp; POS ERP</span></a><a class="flex flex-col text-left px-space-sm py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="patient-dental-crm-recall" href="#"><span class="font-title-sm text-title-sm">Patient Dental CRM &amp; Recall</span><span class="font-label-sm text-label-sm text-secondary">6-Mo Scaling &amp; Post-Op Reminders</span></a></nav></div><div class="p-space-sm m-space-xs bg-surface-container-low border border-outline-variant/30 rounded-lg"><div class="flex items-center justify-between text-secondary mb-1"><span class="font-label-sm text-label-sm uppercase font-semibold">Operatory 2 Load</span><span class="font-code-sm text-code-sm font-semibold text-primary">05h 15m</span></div><div class="flex items-center justify-between text-on-surface"><span class="font-body-sm text-body-sm">Procedures Done</span><span class="font-title-sm text-title-sm font-bold">9 / 14</span></div><div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-1.5 overflow-hidden"><div class="bg-primary h-full rounded-full" style="width: 64%"></div></div></div></aside><div class="pl-64"><main class="w-full pt-16 pb-7 bg-background min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Patient Demographic & Clinical Diagnostic Banner -->
+<section class="bg-surface-container-lowest p-space-md shadow-sm mb-space-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<!-- Demographics & Chief Complaint -->
+<div class="flex items-center gap-space-lg min-w-0">
+<div class="relative">
+<img class="w-12 h-12 rounded-xl object-cover shadow-sm ring-2 ring-primary/20" data-alt="Clinical close-up portrait of Eleanor Vance, a 36-year-old female patient with neutral expression, soft daylight hospital setting, natural skin texture, clinical EHR profile framing with subtle teal background hue" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA46JiRlHA_ADzbI0sPr7_1BgfuGpRX-hAnjTk9FbBx2Wv2c7vXI0M2bBDwNS-0RdNWV7m9f0-1mEuwIJQXn8Y2CwNJD_Td0-G48HW9J8wF9_tCwJzWfKtVdldBsHkFtywFAE-l7RFcRBRAlBSI8ukVK-9Wr3eBiJ_X4Nfg59RJWyM2M0M2lkUMRtxriVefNAGlG5S9qC15VhAOV2lUaUa-wIXu-7NA1g_XxLvjCRsmluGcoNMk14o"/>
+<span class="absolute -bottom-1 -right-1 bg-primary text-on-primary text-[10px] font-bold px-1 rounded-sm uppercase tracking-wider">OPD</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-sm text-headline-sm text-on-surface font-bold tracking-tight">Eleanor Vance</h1>
+<span class="font-label-md text-label-md bg-surface-container-high text-on-surface-variant px-2 py-0.5 rounded">36y • Female</span>
+<span class="font-code-sm text-code-sm bg-surface-container-low text-secondary font-semibold px-2 py-0.5 rounded">UHID #DENT-984210</span>
+<span class="inline-flex items-center gap-1 bg-error-container text-on-error-container font-label-sm text-label-sm px-2 py-0.5 rounded font-bold uppercase tracking-wider">
+<span class="material-symbols-outlined text-[13px]">warning</span>
+              Allergies: Latex, Amoxicillin (Severe)
+            </span>
+</div>
+<div class="flex items-center gap-space-md mt-1 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1 font-medium text-error">
+<span class="material-symbols-outlined text-[16px]">priority_high</span>
+<strong class="font-semibold text-on-surface">Chief Complaint:</strong> Severe pain in upper right molar (#3) on cold &amp; chewing × 4 days
+            </span>
+<span class="text-outline-variant font-bold">•</span>
+<span class="text-secondary">Assigned Surgeon: <strong class="text-on-surface font-medium">Dr. Sarah Jenkins</strong></span>
+</div>
+</div>
+</div>
+<!-- Oral Health Scores & Hot Actions -->
+<div class="flex items-center gap-space-md">
+<!-- Diagnostic Metric Chips -->
+<div class="flex items-center gap-space-sm bg-surface-container-low px-space-md py-1.5 rounded-lg shadow-sm">
+<div class="flex flex-col text-center px-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold">DMFT Score</span>
+<span class="font-title-md text-title-md font-bold text-primary">04</span>
+</div>
+<div class="w-px h-7 bg-surface-container-highest"></div>
+<div class="flex flex-col text-center px-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold">Plaque Index</span>
+<span class="font-title-md text-title-md font-bold text-tertiary">18%</span>
+</div>
+<div class="w-px h-7 bg-surface-container-highest"></div>
+<div class="flex flex-col text-center px-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold">Gingival Bleed</span>
+<span class="font-title-md text-title-md font-bold text-error">Mild (BOP+)</span>
+</div>
+</div>
+<!-- Quick Top CTA -->
+<div class="flex items-center gap-space-xs">
+<button class="flex items-center gap-1 bg-surface-container-high text-on-surface hover:bg-surface-container-highest font-label-md text-label-md px-3 py-2 rounded-lg transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">view_in_ar</span>
+<span>3D Intraoral Scan Import</span>
+</button>
+<button class="flex items-center gap-1 bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md px-3.5 py-2 rounded-lg shadow-sm transition-all font-semibold">
+<span class="material-symbols-outlined text-[16px]">save</span>
+<span>Save Charting</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- 3-Column Clinical Split Workstation Workspace -->
+<div class="grid grid-cols-12 gap-space-sm px-space-md pb-space-lg">
+<!-- LEFT PANE: Radiographs, Intraoral Cam & Procedure Timeline (Col 3) -->
+<aside class="col-span-12 lg:col-span-3 flex flex-col gap-space-sm">
+<!-- Radiography & Imaging Hub -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-sm mb-space-sm border-b border-surface-container-high">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">radiology</span>
+<h2 class="font-title-sm text-title-sm text-on-surface font-bold">Radiographs &amp; DICOM</h2>
+</div>
+<span class="font-code-sm text-code-sm bg-secondary-container text-on-secondary-container px-1.5 py-0.5 rounded font-bold">3 Series</span>
+</div>
+<!-- Primary Active Radiograph Thumbnail with DICOM Tools -->
+<div class="relative group rounded-lg overflow-hidden bg-inverse-surface shadow-inner">
+<img class="w-full h-44 object-cover opacity-90 group-hover:opacity-100 transition-opacity" data-alt="High-resolution clinical digital dental periapical bitewing radiograph focused on upper right maxillary first molar tooth three showing deep radiolucency into the pulp chamber with periapical periodontal ligament widening, inverted grayscale radiography medical imaging" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtybwCTyGSxF6tgcxA4xuLw9u0pZIqZDuCn_fTztN9Oy3gKOB8KYtNJwaf-C3tjXZZ9k77CI3CGNxn-uZkEtiJhQNhSbgBctazRXxUt7GMRF0CvBr6DOIgTpjXkMrUu1y34tnkf0Hvne_Ee2u1u5PUyzog41q1H8GsRfL3mZcnySEsD2ujHUm74zMIsC4tnYr2hEyHxf-yRB-aRWGgd8Dh5wacWYKFFKbc5O0BVmks-QUfOT3niE8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface via-transparent to-transparent opacity-80 pointer-events-none"></div>
+<div class="absolute top-2 left-2 flex items-center gap-1 bg-inverse-surface/80 text-inverse-on-surface px-1.5 py-0.5 rounded text-[11px] font-mono backdrop-blur-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-ping"></span>
+            PA Tooth #3 (16)
+          </div>
+<div class="absolute bottom-2 left-2 right-2 flex items-center justify-between">
+<span class="font-code-sm text-code-sm text-inverse-on-surface font-semibold">BiteWing - Today 11:15</span>
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-sm text-label-sm px-2 py-0.5 rounded flex items-center gap-1 shadow-sm transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[13px]">zoom_in</span>
+<span>Full DICOM</span>
+</button>
+</div>
+</div>
+<!-- Thumbnail Gallery Strip -->
+<div class="grid grid-cols-2 gap-2 mt-space-sm">
+<div class="relative rounded-md overflow-hidden bg-surface-container-high cursor-pointer hover:ring-2 hover:ring-primary transition-all">
+<img class="w-full h-16 object-cover" data-alt="Panoramic dental orthopantomogram OPG full mouth radiograph showing complete adult dentition maxillary and mandibular dental arches on medical dark background with clinical measurement markers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-rwsifQgdNcBIwxCwRhTKgQfQBOkZ0rvmA3jxxfPUpVI4VW-6Tbk7en0WtgK4ryAHz5fr9TC33M7C5qT55xaONGujlzNdacwBK56oPzIbvob-ELFsmFwo4nksUCdt34sYG_UdBGvCoIxo5vP0NRDkEJEB33GNDD7uGGdQ4GvqoOcbcNAWzMJwJGVR9P_6DTDLFH0lXz-e_AdUqrzEoabUAkDbL1q4RWIUQ7JeM6Nsl7MTSaJFAfs"/>
+<div class="absolute inset-0 bg-on-surface/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+<span class="font-label-sm text-label-sm text-on-primary bg-primary px-1.5 py-0.5 rounded font-bold">OPG Full</span>
+</div>
+<span class="absolute bottom-0.5 left-1 text-[10px] text-surface-container-lowest font-mono drop-shadow">OPG 2024</span>
+</div>
+<div class="relative rounded-md overflow-hidden bg-surface-container-high cursor-pointer hover:ring-2 hover:ring-primary transition-all">
+<img class="w-full h-16 object-cover" data-alt="High magnification macro intraoral camera photograph of tooth number 3 occlusal surface displaying dark cavitated carious lesion on the central pit and stained fissure morphology with surgical illumination" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAamo61CuSlvZ7tiheri3ODxOe0ohXtwdhCemWO42WuZjc_BdBYaLSUMW9Xzq6_X0Z3a-MO2u1MKW5nCoElprRDpV04FH-ZB_m1DoamLVr_CaoGwAc4TsqEp2rDTEHhout0HhIkECP25HurDcmR0MFFuaDr8ZhjdH4VbL0h9wFCClpFda_asQ4nUP4cY3Cgo3ym0eKO579BWHZjD7GHqmjB3pnJZocsUOZVcwE7n2cqDLFX68RIoHA"/>
+<div class="absolute inset-0 bg-on-surface/40 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+<span class="font-label-sm text-label-sm text-on-primary bg-primary px-1.5 py-0.5 rounded font-bold">Intraoral Cam</span>
+</div>
+<span class="absolute bottom-0.5 left-1 text-[10px] text-surface-container-lowest font-mono drop-shadow">Cam #3 Central</span>
+</div>
+</div>
+</div>
+<!-- Past Clinical Procedures Timeline -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex-1">
+<div class="flex items-center justify-between pb-space-xs mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]">history_edu</span>
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold">Dental EHR Log</h3>
+</div>
+<button class="font-label-sm text-label-sm text-primary font-semibold hover:underline">View All</button>
+</div>
+<div class="relative pl-4 space-y-3 before:absolute before:left-1.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-highest">
+<div class="relative group">
+<span class="absolute -left-4 top-1 w-2.5 h-2.5 rounded-full bg-primary ring-2 ring-surface-container-lowest"></span>
+<div class="bg-surface-container-low p-2 rounded-lg">
+<div class="flex items-center justify-between text-[11px] text-secondary font-mono">
+<span>14-Jan-2024</span>
+<span class="text-primary font-semibold">MetroCare</span>
+</div>
+<p class="font-title-sm text-title-sm text-on-surface font-semibold mt-0.5">Tooth #14 Root Canal Completed</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] mt-0.5">Obturated with Gutta-percha &amp; AH-Plus. Core composite placed.</p>
+</div>
+</div>
+<div class="relative group">
+<span class="absolute -left-4 top-1 w-2.5 h-2.5 rounded-full bg-secondary-fixed-dim ring-2 ring-surface-container-lowest"></span>
+<div class="bg-surface-container-low p-2 rounded-lg">
+<div class="flex items-center justify-between text-[11px] text-secondary font-mono">
+<span>08-Aug-2023</span>
+<span class="text-secondary font-semibold">Dr. A. Verma</span>
+</div>
+<p class="font-title-sm text-title-sm text-on-surface font-semibold mt-0.5">Tooth #19 PFM Crown Cemented</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] mt-0.5">Luted using GC Fuji PLUS resin glass ionomer cement.</p>
+</div>
+</div>
+<div class="relative group">
+<span class="absolute -left-4 top-1 w-2.5 h-2.5 rounded-full bg-secondary-fixed-dim ring-2 ring-surface-container-lowest"></span>
+<div class="bg-surface-container-low p-2 rounded-lg">
+<div class="flex items-center justify-between text-[11px] text-secondary font-mono">
+<span>12-Mar-2023</span>
+<span class="text-secondary font-semibold">Dr. S. Jenkins</span>
+</div>
+<p class="font-title-sm text-title-sm text-on-surface font-semibold mt-0.5">Tooth #30 MO Composite Fill</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] mt-0.5">Filtek Z350 XT shade A2, acid etch 37% phosphoric.</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- CENTER STAGE: Adult 32-Tooth Odontogram & Periodontal Probing Depth Engine (Col 6) -->
+<main class="col-span-12 lg:col-span-6 flex flex-col gap-space-sm">
+<!-- Odontogram Interactive Console Header -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-sm pb-space-xs border-b border-surface-container-high">
+<div class="flex items-center gap-space-sm">
+<div class="p-1.5 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined text-[22px]">dentistry</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Interactive Odontogram</h2>
+<span class="font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed-variant px-2 py-0.5 rounded font-bold">Universal (1-32)</span>
+</div>
+<span class="font-body-sm text-body-sm text-secondary">Click tooth surface to mark pathologies, restorations &amp; surgical plans</span>
+</div>
+</div>
+<!-- Quick Surface Selector (MODBL) -->
+<div class="flex items-center gap-1 bg-surface-container-low p-1 rounded-lg">
+<span class="font-label-sm text-label-sm text-secondary px-1 uppercase font-bold">Surfaces:</span>
+<button class="w-6 h-6 rounded bg-surface-container-lowest text-on-surface font-code-sm text-code-sm font-bold shadow-sm hover:bg-primary hover:text-on-primary transition-colors">M</button>
+<button class="w-6 h-6 rounded bg-primary text-on-primary font-code-sm text-code-sm font-bold shadow-sm">O</button>
+<button class="w-6 h-6 rounded bg-surface-container-lowest text-on-surface font-code-sm text-code-sm font-bold shadow-sm hover:bg-primary hover:text-on-primary transition-colors">D</button>
+<button class="w-6 h-6 rounded bg-surface-container-lowest text-on-surface font-code-sm text-code-sm font-bold shadow-sm hover:bg-primary hover:text-on-primary transition-colors">B</button>
+<button class="w-6 h-6 rounded bg-surface-container-lowest text-on-surface font-code-sm text-code-sm font-bold shadow-sm hover:bg-primary hover:text-on-primary transition-colors">L</button>
+</div>
+</div>
+<!-- Odontogram Color Legend -->
+<div class="flex items-center justify-between flex-wrap gap-2 px-space-xs py-1.5 mb-space-sm bg-surface-container-low rounded-lg text-[11px] font-medium text-secondary">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-error border border-error/40"></span>
+<span class="text-on-surface font-semibold">Active Caries / Decay</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-tertiary"></span>
+<span>Root Canal Treated</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-secondary"></span>
+<span>Crown (PFM/Zirconia)</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-primary-fixed-dim border border-primary"></span>
+<span>Composite Restoration</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-surface-variant border border-outline border-dashed"></span>
+<span>Missing / Planned Implant</span>
+</div>
+</div>
+<!-- UPPER MAXILLARY ARCH (Teeth #1 to #16) -->
+<div class="mb-space-md">
+<div class="flex items-center justify-between mb-1 px-1">
+<span class="font-label-sm text-label-sm uppercase font-bold text-secondary tracking-wider">Upper Maxillary Arch (Right to Left)</span>
+<span class="font-code-sm text-code-sm text-outline font-semibold">Quadrant 1 • Quadrant 2</span>
+</div>
+<div class="grid grid-cols-16 gap-1 p-2 bg-surface-container-low rounded-xl overflow-x-auto">
+<!-- Loop representation of 16 maxillary teeth with key pathological states -->
+<!-- Tooth #1 -->
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">1</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<rect fill="#EAEDFF" height="28" rx="4" stroke="#6D7A77" stroke-width="1.5" width="20" x="5" y="18"></rect>
+<path d="M5 28 Q15 22 25 28" fill="none" stroke="#6D7A77" stroke-width="1.2"></path>
+<path d="M10 5 Q15 0 20 5 L20 18 L10 18 Z" fill="#DAE2FD" stroke="#6D7A77" stroke-width="1.2"></path>
+</svg>
+<span class="text-[9px] text-secondary font-mono">18</span>
+</div>
+<!-- Tooth #2 -->
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">2</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<rect fill="#EAEDFF" height="28" rx="4" stroke="#6D7A77" stroke-width="1.5" width="20" x="5" y="18"></rect>
+<path d="M5 28 Q15 22 25 28" fill="none" stroke="#6D7A77" stroke-width="1.2"></path>
+<path d="M10 5 Q15 0 20 5 L20 18 L10 18 Z" fill="#DAE2FD" stroke="#6D7A77" stroke-width="1.2"></path>
+</svg>
+<span class="text-[9px] text-secondary font-mono">17</span>
+</div>
+<!-- Tooth #3 (ACTIVE PATHOLOGY: Deep Caries & Pulpitis) -->
+<div class="flex flex-col items-center p-1 bg-error-container/40 rounded-lg ring-2 ring-error cursor-pointer scale-105 shadow-md">
+<span class="font-code-sm text-code-sm font-bold text-error">3</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<!-- Tooth body -->
+<rect fill="#FFDAD6" height="30" rx="4" stroke="#BA1A1A" stroke-width="1.8" width="22" x="4" y="16"></rect>
+<!-- Occlusal Deep Caries Mark -->
+<circle cx="15" cy="30" fill="#BA1A1A" r="5"></circle>
+<path d="M13 28 L17 32 M17 28 L13 32" stroke="#FFFFFF" stroke-width="1"></path>
+<!-- Roots with pulpitis indicator -->
+<path d="M8 2 Q11 0 14 6 L14 16 L8 16 Z" fill="#FFDAD6" stroke="#BA1A1A" stroke-width="1.2"></path>
+<path d="M16 6 Q19 0 22 2 L22 16 L16 16 Z" fill="#FFDAD6" stroke="#BA1A1A" stroke-width="1.2"></path>
+<!-- Apex flare -->
+<circle cx="11" cy="2" fill="#BA1A1A" r="1.5"></circle>
+<circle cx="19" cy="2" fill="#BA1A1A" r="1.5"></circle>
+</svg>
+<span class="text-[9px] font-bold text-error font-mono">16 • RCT</span>
+</div>
+<!-- Tooth #4 to #13 Standard/Sound teeth -->
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">4</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<rect fill="#F2F3FF" height="26" rx="4" stroke="#6D7A77" stroke-width="1.2" width="18" x="6" y="20"></rect>
+<path d="M11 6 Q15 0 19 6 L19 20 L11 20 Z" fill="#EAEDFF" stroke="#6D7A77" stroke-width="1"></path>
+</svg>
+<span class="text-[9px] text-secondary font-mono">15</span>
+</div>
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">5</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<rect fill="#F2F3FF" height="26" rx="4" stroke="#6D7A77" stroke-width="1.2" width="18" x="6" y="20"></rect>
+<path d="M11 6 Q15 0 19 6 L19 20 L11 20 Z" fill="#EAEDFF" stroke="#6D7A77" stroke-width="1"></path>
+</svg>
+<span class="text-[9px] text-secondary font-mono">14</span>
+</div>
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">6</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<path d="M7 22 L15 46 L23 22 Z" fill="#F2F3FF" stroke="#6D7A77" stroke-width="1.2"></path>
+<path d="M12 4 Q15 0 18 4 L18 22 L12 22 Z" fill="#EAEDFF" stroke="#6D7A77" stroke-width="1"></path>
+</svg>
+<span class="text-[9px] text-secondary font-mono">13</span>
+</div>
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">7</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<path d="M8 22 L15 46 L22 22 Z" fill="#F2F3FF" stroke="#6D7A77" stroke-width="1.2"></path>
+<path d="M12 4 Q15 0 18 4 L18 22 L12 22 Z" fill="#EAEDFF" stroke="#6D7A77" stroke-width="1"></path>
+</svg>
+<span class="text-[9px] text-secondary font-mono">12</span>
+</div>
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">8</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<rect fill="#F2F3FF" height="24" rx="2" stroke="#6D7A77" stroke-width="1.2" width="16" x="7" y="22"></rect>
+<path d="M11 4 Q15 0 19 4 L19 22 L11 22 Z" fill="#EAEDFF" stroke="#6D7A77" stroke-width="1"></path>
+</svg>
+<span class="text-[9px] text-secondary font-mono">11</span>
+</div>
+<!-- Midline Divider -->
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all border-r-2 border-primary/40">
+<span class="font-code-sm text-code-sm font-bold text-secondary">9</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<rect fill="#F2F3FF" height="24" rx="2" stroke="#6D7A77" stroke-width="1.2" width="16" x="7" y="22"></rect>
+<path d="M11 4 Q15 0 19 4 L19 22 L11 22 Z" fill="#EAEDFF" stroke="#6D7A77" stroke-width="1"></path>
+</svg>
+<span class="text-[9px] text-secondary font-mono">21</span>
+</div>
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">10</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<path d="M8 22 L15 46 L22 22 Z" fill="#F2F3FF" stroke="#6D7A77" stroke-width="1.2"></path>
+<path d="M12 4 Q15 0 18 4 L18 22 L12 22 Z" fill="#EAEDFF" stroke="#6D7A77" stroke-width="1"></path>
+</svg>
+<span class="text-[9px] text-secondary font-mono">22</span>
+</div>
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">11</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<path d="M7 22 L15 46 L23 22 Z" fill="#F2F3FF" stroke="#6D7A77" stroke-width="1.2"></path>
+<path d="M12 4 Q15 0 18 4 L18 22 L12 22 Z" fill="#EAEDFF" stroke="#6D7A77" stroke-width="1"></path>
+</svg>
+<span class="text-[9px] text-secondary font-mono">23</span>
+</div>
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">12</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<rect fill="#F2F3FF" height="26" rx="4" stroke="#6D7A77" stroke-width="1.2" width="18" x="6" y="20"></rect>
+<path d="M11 6 Q15 0 19 6 L19 20 L11 20 Z" fill="#EAEDFF" stroke="#6D7A77" stroke-width="1"></path>
+</svg>
+<span class="text-[9px] text-secondary font-mono">24</span>
+</div>
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">13</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<rect fill="#F2F3FF" height="26" rx="4" stroke="#6D7A77" stroke-width="1.2" width="18" x="6" y="20"></rect>
+<path d="M11 6 Q15 0 19 6 L19 20 L11 20 Z" fill="#EAEDFF" stroke="#6D7A77" stroke-width="1"></path>
+</svg>
+<span class="text-[9px] text-secondary font-mono">25</span>
+</div>
+<!-- Tooth #14 (EXISTING CONDITION: Root Canal Treated) -->
+<div class="flex flex-col items-center p-1 bg-tertiary-fixed/40 rounded-lg ring-1 ring-tertiary cursor-pointer hover:bg-tertiary-fixed transition-all">
+<span class="font-code-sm text-code-sm font-bold text-tertiary">14</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<rect fill="#E2DFFF" height="28" rx="4" stroke="#4B41E1" stroke-width="1.5" width="22" x="4" y="18"></rect>
+<!-- RCT Canals sealed with gutta-percha lines -->
+<line stroke="#4B41E1" stroke-width="2.5" x1="11" x2="11" y1="5" y2="38"></line>
+<line stroke="#4B41E1" stroke-width="2.5" x1="19" x2="19" y1="5" y2="38"></line>
+</svg>
+<span class="text-[9px] font-bold text-tertiary font-mono">26 • RCT</span>
+</div>
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">15</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<rect fill="#EAEDFF" height="28" rx="4" stroke="#6D7A77" stroke-width="1.2" width="20" x="5" y="18"></rect>
+<path d="M10 5 Q15 0 20 5 L20 18 L10 18 Z" fill="#DAE2FD" stroke="#6D7A77" stroke-width="1"></path>
+</svg>
+<span class="text-[9px] text-secondary font-mono">27</span>
+</div>
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">16</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<rect fill="#EAEDFF" height="28" rx="4" stroke="#6D7A77" stroke-width="1.2" width="20" x="5" y="18"></rect>
+<path d="M10 5 Q15 0 20 5 L20 18 L10 18 Z" fill="#DAE2FD" stroke="#6D7A77" stroke-width="1"></path>
+</svg>
+<span class="text-[9px] text-secondary font-mono">28</span>
+</div>
+</div>
+</div>
+<!-- LOWER MANDIBULAR ARCH (Teeth #32 to #17) -->
+<div>
+<div class="flex items-center justify-between mb-1 px-1">
+<span class="font-label-sm text-label-sm uppercase font-bold text-secondary tracking-wider">Lower Mandibular Arch (Right to Left)</span>
+<span class="font-code-sm text-code-sm text-outline font-semibold">Quadrant 4 • Quadrant 3</span>
+</div>
+<div class="grid grid-cols-16 gap-1 p-2 bg-surface-container-low rounded-xl overflow-x-auto">
+<!-- Tooth #32 -->
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">32</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<rect fill="#EAEDFF" height="26" rx="4" stroke="#6D7A77" stroke-width="1.2" width="20" x="5" y="6"></rect>
+<path d="M10 32 Q15 48 20 32 L20 48 L10 48 Z" fill="#DAE2FD" stroke="#6D7A77" stroke-width="1"></path>
+</svg>
+<span class="text-[9px] text-secondary font-mono">48</span>
+</div>
+<!-- Tooth #31 -->
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">31</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<rect fill="#EAEDFF" height="26" rx="4" stroke="#6D7A77" stroke-width="1.2" width="20" x="5" y="6"></rect>
+<path d="M10 32 Q15 48 20 32 L20 48 L10 48 Z" fill="#DAE2FD" stroke="#6D7A77" stroke-width="1"></path>
+</svg>
+<span class="text-[9px] text-secondary font-mono">47</span>
+</div>
+<!-- Tooth #30 (Composite Restoration Marked) -->
+<div class="flex flex-col items-center p-1 bg-primary-fixed/30 rounded-lg ring-1 ring-primary cursor-pointer hover:bg-primary-fixed/50 transition-all">
+<span class="font-code-sm text-code-sm font-bold text-primary">30</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<rect fill="#EAEDFF" height="26" rx="4" stroke="#00685F" stroke-width="1.5" width="20" x="5" y="6"></rect>
+<!-- Composite Filling Block -->
+<rect fill="#89F5E7" height="12" rx="1" stroke="#00685F" stroke-width="1" width="14" x="8" y="10"></rect>
+<path d="M10 32 Q15 48 20 32 L20 48 L10 48 Z" fill="#DAE2FD" stroke="#00685F" stroke-width="1"></path>
+</svg>
+<span class="text-[9px] font-bold text-primary font-mono">46 • Comp</span>
+</div>
+<!-- Tooth #29 to #20 Teeth -->
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">29</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50"><rect fill="#F2F3FF" height="24" rx="3" stroke="#6D7A77" stroke-width="1" width="18" x="6" y="8"></rect></svg>
+<span class="text-[9px] text-secondary font-mono">45</span>
+</div>
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">28</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50"><rect fill="#F2F3FF" height="24" rx="3" stroke="#6D7A77" stroke-width="1" width="18" x="6" y="8"></rect></svg>
+<span class="text-[9px] text-secondary font-mono">44</span>
+</div>
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">27</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50"><path d="M7 6 L15 28 L23 6 Z" fill="#F2F3FF" stroke="#6D7A77" stroke-width="1"></path></svg>
+<span class="text-[9px] text-secondary font-mono">43</span>
+</div>
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">26</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50"><rect fill="#F2F3FF" height="24" rx="2" stroke="#6D7A77" stroke-width="1" width="16" x="7" y="6"></rect></svg>
+<span class="text-[9px] text-secondary font-mono">42</span>
+</div>
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all border-r-2 border-primary/40">
+<span class="font-code-sm text-code-sm font-bold text-secondary">25</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50"><rect fill="#F2F3FF" height="24" rx="2" stroke="#6D7A77" stroke-width="1" width="16" x="7" y="6"></rect></svg>
+<span class="text-[9px] text-secondary font-mono">41</span>
+</div>
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">24</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50"><rect fill="#F2F3FF" height="24" rx="2" stroke="#6D7A77" stroke-width="1" width="16" x="7" y="6"></rect></svg>
+<span class="text-[9px] text-secondary font-mono">31</span>
+</div>
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">23</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50"><rect fill="#F2F3FF" height="24" rx="2" stroke="#6D7A77" stroke-width="1" width="16" x="7" y="6"></rect></svg>
+<span class="text-[9px] text-secondary font-mono">32</span>
+</div>
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">22</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50"><path d="M7 6 L15 28 L23 6 Z" fill="#F2F3FF" stroke="#6D7A77" stroke-width="1"></path></svg>
+<span class="text-[9px] text-secondary font-mono">33</span>
+</div>
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">21</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50"><rect fill="#F2F3FF" height="24" rx="3" stroke="#6D7A77" stroke-width="1" width="18" x="6" y="8"></rect></svg>
+<span class="text-[9px] text-secondary font-mono">34</span>
+</div>
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">20</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50"><rect fill="#F2F3FF" height="24" rx="3" stroke="#6D7A77" stroke-width="1" width="18" x="6" y="8"></rect></svg>
+<span class="text-[9px] text-secondary font-mono">35</span>
+</div>
+<!-- Tooth #19 (PFM Crown Existing) -->
+<div class="flex flex-col items-center p-1 bg-secondary-container rounded-lg ring-1 ring-secondary cursor-pointer hover:bg-secondary-fixed transition-all">
+<span class="font-code-sm text-code-sm font-bold text-on-secondary-fixed">19</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<rect fill="#B9C7E0" height="26" rx="4" stroke="#515F74" stroke-width="1.8" width="22" x="4" y="6"></rect>
+<path d="M6 14 H24" stroke="#515F74" stroke-dasharray="2 1" stroke-width="1.5"></path>
+<path d="M10 32 Q15 48 20 32 L20 48 L10 48 Z" fill="#D5E3FD" stroke="#515F74" stroke-width="1"></path>
+</svg>
+<span class="text-[9px] font-bold text-secondary font-mono">36 • PFM</span>
+</div>
+<!-- Tooth #18 (Missing / Planned Implant) -->
+<div class="flex flex-col items-center p-1 bg-surface-container-highest/60 rounded-lg border border-dashed border-outline cursor-pointer hover:bg-surface-container-highest transition-all">
+<span class="font-code-sm text-code-sm font-bold text-outline">18</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<!-- Implant Screw Graphic -->
+<line stroke="#6D7A77" stroke-width="2" x1="15" x2="15" y1="8" y2="44"></line>
+<line stroke="#6D7A77" stroke-width="1.5" x1="9" x2="21" y1="14" y2="14"></line>
+<line stroke="#6D7A77" stroke-width="1.5" x1="10" x2="20" y1="20" y2="20"></line>
+<line stroke="#6D7A77" stroke-width="1.5" x1="11" x2="19" y1="26" y2="26"></line>
+<line stroke="#6D7A77" stroke-width="1.5" x1="12" x2="18" y1="32" y2="32"></line>
+<polygon fill="#6D7A77" points="15,44 12,38 18,38"></polygon>
+</svg>
+<span class="text-[9px] font-bold text-secondary font-mono">37 • Imp?</span>
+</div>
+<!-- Tooth #17 -->
+<div class="flex flex-col items-center p-1 bg-surface-container-lowest rounded hover:bg-surface-container-high cursor-pointer transition-all">
+<span class="font-code-sm text-code-sm font-bold text-secondary">17</span>
+<svg class="w-6 h-10 my-1" viewbox="0 0 30 50">
+<rect fill="#EAEDFF" height="26" rx="4" stroke="#6D7A77" stroke-width="1.2" width="20" x="5" y="6"></rect>
+<path d="M10 32 Q15 48 20 32 L20 48 L10 48 Z" fill="#DAE2FD" stroke="#6D7A77" stroke-width="1"></path>
+</svg>
+<span class="text-[9px] text-secondary font-mono">38</span>
+</div>
+</div>
+</div>
+</div>
+<!-- PERIODONTAL PROBING DEPTHS (6-point grid with BOP) -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs mb-space-sm border-b border-surface-container-high">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-[20px]">straighten</span>
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold">6-Point Periodontal Depth Matrix (Q1 &amp; Q4)</h3>
+</div>
+<div class="flex items-center gap-space-sm text-[11px] font-medium text-secondary">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-error"></span> BOP (Bleed on Probe)</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-error-container"></span> Pocket ≥ 4mm</span>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left font-body-sm text-body-sm">
+<thead>
+<tr class="bg-surface-container-low text-secondary font-label-sm text-label-sm uppercase">
+<th class="py-1 px-2 font-bold">Tooth #</th>
+<th class="py-1 px-1 text-center font-bold">Distobuccal</th>
+<th class="py-1 px-1 text-center font-bold">Mid-Buccal</th>
+<th class="py-1 px-1 text-center font-bold">Mesiobuccal</th>
+<th class="py-1 px-1 text-center font-bold">Distolingual</th>
+<th class="py-1 px-1 text-center font-bold">Mid-Lingual</th>
+<th class="py-1 px-1 text-center font-bold">Mesiolingual</th>
+<th class="py-1 px-2 text-right font-bold">Furcation</th>
+</tr>
+</thead>
+<tbody class="font-code-sm text-code-sm divide-y divide-surface-container-high">
+<!-- Tooth 2 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-1 px-2 font-bold text-on-surface">#2 (17)</td>
+<td class="py-1 px-1 text-center text-on-surface">3mm</td>
+<td class="py-1 px-1 text-center text-on-surface">2mm</td>
+<td class="py-1 px-1 text-center text-on-surface">3mm</td>
+<td class="py-1 px-1 text-center text-on-surface">3mm</td>
+<td class="py-1 px-1 text-center text-on-surface">2mm</td>
+<td class="py-1 px-1 text-center text-on-surface">3mm</td>
+<td class="py-1 px-2 text-right text-secondary">Class 0</td>
+</tr>
+<!-- Tooth 3 (Symptomatic tooth) -->
+<tr class="bg-error-container/30 font-bold hover:bg-error-container/50 transition-colors">
+<td class="py-1 px-2 text-error flex items-center gap-1">
+<span>#3 (16)</span>
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
+</td>
+<td class="py-1 px-1 text-center text-error bg-error-container/60 rounded">5mm*</td>
+<td class="py-1 px-1 text-center text-on-surface">3mm</td>
+<td class="py-1 px-1 text-center text-error bg-error-container/60 rounded">6mm*</td>
+<td class="py-1 px-1 text-center text-error bg-error-container/60 rounded">4mm*</td>
+<td class="py-1 px-1 text-center text-on-surface">3mm</td>
+<td class="py-1 px-1 text-center text-error bg-error-container/60 rounded">5mm*</td>
+<td class="py-1 px-2 text-right text-error font-semibold">Grade I</td>
+</tr>
+<!-- Tooth 4 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-1 px-2 font-bold text-on-surface">#4 (15)</td>
+<td class="py-1 px-1 text-center text-on-surface">2mm</td>
+<td class="py-1 px-1 text-center text-on-surface">2mm</td>
+<td class="py-1 px-1 text-center text-on-surface">3mm</td>
+<td class="py-1 px-1 text-center text-on-surface">2mm</td>
+<td class="py-1 px-1 text-center text-on-surface">2mm</td>
+<td class="py-1 px-1 text-center text-on-surface">2mm</td>
+<td class="py-1 px-2 text-right text-secondary">Class 0</td>
+</tr>
+<!-- Tooth 30 -->
+<tr class="hover:bg-surface-container-low transition-colors">
+<td class="py-1 px-2 font-bold text-on-surface">#30 (46)</td>
+<td class="py-1 px-1 text-center text-on-surface">3mm</td>
+<td class="py-1 px-1 text-center text-on-surface">2mm</td>
+<td class="py-1 px-1 text-center text-error bg-error-container/40 rounded">4mm*</td>
+<td class="py-1 px-1 text-center text-on-surface">3mm</td>
+<td class="py-1 px-1 text-center text-on-surface">2mm</td>
+<td class="py-1 px-1 text-center text-on-surface">3mm</td>
+<td class="py-1 px-2 text-right text-secondary">Class 0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+<!-- RIGHT PANE: Treatment Plan Phase Builder & Dental Rx (Col 3) -->
+<section class="col-span-12 lg:col-span-3 flex flex-col gap-space-sm">
+<!-- Active Treatment Plan Builder -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs mb-space-sm border-b border-surface-container-high">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">assignment_turned_in</span>
+<h2 class="font-title-sm text-title-sm text-on-surface font-bold">Treatment Plan Phases</h2>
+</div>
+<span class="font-label-sm text-label-sm bg-primary/10 text-primary font-bold px-2 py-0.5 rounded">3 Phases</span>
+</div>
+<!-- Phases Accordion List -->
+<div class="space-y-space-sm">
+<!-- Phase 1 (Immediate / High Priority) -->
+<div class="bg-error-container/20 rounded-lg p-2.5 shadow-sm">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm bg-error text-on-error font-bold px-1.5 py-0.5 rounded uppercase">Phase 1 • Immediate</span>
+<span class="font-code-sm text-code-sm font-bold text-on-surface">$720.00</span>
+</div>
+<h4 class="font-title-sm text-title-sm text-on-surface font-bold">Tooth #3 Multi-Visit RCT</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] mt-0.5">
+              Access opening, pulpectomy, bio-ceramic canal sealer &amp; temporary Cavit seal.
+            </p>
+<div class="flex items-center justify-between mt-2 pt-2 border-t border-error/20 text-[11px]">
+<span class="text-error font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">alarm</span> Stat Today
+              </span>
+<span class="font-code-sm text-code-sm font-semibold text-secondary">Est: 45 min</span>
+</div>
+</div>
+<!-- Phase 2 (Restorative) -->
+<div class="bg-surface-container-low rounded-lg p-2.5 shadow-sm">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm bg-surface-container-highest text-secondary font-bold px-1.5 py-0.5 rounded uppercase">Phase 2 • Prosthetic</span>
+<span class="font-code-sm text-code-sm font-bold text-on-surface">$1,150.00</span>
+</div>
+<h4 class="font-title-sm text-title-sm text-on-surface font-bold">Post &amp; Core + E-max Crown</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] mt-0.5">
+              Fiber post reinforcement on #3 + CAD/CAM monolithic E-max ceramic crown prep.
+            </p>
+<div class="flex items-center justify-between mt-2 pt-2 border-t border-surface-container-high text-[11px] text-secondary">
+<span>Visit 2 &amp; 3 (Lab 5d)</span>
+<span class="font-code-sm text-code-sm font-semibold">Ready for scheduling</span>
+</div>
+</div>
+<!-- Phase 3 (Preventive / Periodontal) -->
+<div class="bg-surface-container-low rounded-lg p-2.5 shadow-sm">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm bg-surface-container-highest text-secondary font-bold px-1.5 py-0.5 rounded uppercase">Phase 3 • Hygiene</span>
+<span class="font-code-sm text-code-sm font-bold text-on-surface">$180.00</span>
+</div>
+<h4 class="font-title-sm text-title-sm text-on-surface font-bold">Ultrasonic Full-Mouth Scaling</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-[12px] mt-0.5">
+              Subgingival curettage + plaque debridement + fluoride varnish application.
+            </p>
+<div class="flex items-center justify-between mt-2 pt-2 border-t border-surface-container-high text-[11px] text-secondary">
+<span>Routine Recall</span>
+<span class="font-code-sm text-code-sm font-semibold">Post-RCT Stage</span>
+</div>
+</div>
+</div>
+<!-- Total Estimate Summary -->
+<div class="mt-space-md p-space-sm bg-surface-container-high rounded-lg flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold">Total Treatment Est.</span>
+<p class="font-headline-sm text-headline-sm text-primary font-bold leading-tight">$2,050.00</p>
+</div>
+<button class="bg-surface-container-lowest hover:bg-surface-container-highest text-on-surface font-label-md text-label-md px-3 py-1.5 rounded shadow-sm transition-colors flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-[15px] text-primary">print</span>
+<span>Consent &amp; Est.</span>
+</button>
+</div>
+</div>
+<!-- 1-Click Dental Prescription Engine -->
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between pb-space-xs mb-space-sm border-b border-surface-container-high">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[20px]">prescriptions</span>
+<h3 class="font-title-sm text-title-sm text-on-surface font-bold">Rx Dental Regimen</h3>
+</div>
+<span class="font-label-sm text-label-sm bg-error-container text-on-error-container px-1.5 py-0.5 rounded font-bold">Penicillin-Safe</span>
+</div>
+<div class="space-y-2">
+<!-- Rx 1 -->
+<div class="bg-surface-container-low p-2 rounded-lg flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1">
+<strong class="font-title-sm text-title-sm text-on-surface font-bold">Clindamycin 300mg</strong>
+<span class="font-label-sm text-label-sm bg-surface-container-highest text-secondary px-1 rounded">Oral</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary text-[11px]">1 cap QID × 5 days (Penicillin substitute)</p>
+</div>
+<span class="font-code-sm text-code-sm bg-surface-container-lowest text-primary px-1.5 py-0.5 rounded font-bold shadow-sm">#20</span>
+</div>
+<!-- Rx 2 -->
+<div class="bg-surface-container-low p-2 rounded-lg flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1">
+<strong class="font-title-sm text-title-sm text-on-surface font-bold">Ketorolac 10mg</strong>
+<span class="font-label-sm text-label-sm bg-surface-container-highest text-secondary px-1 rounded">Oral</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary text-[11px]">1 tab TDS after meals × 3 days for acute pain</p>
+</div>
+<span class="font-code-sm text-code-sm bg-surface-container-lowest text-primary px-1.5 py-0.5 rounded font-bold shadow-sm">#9</span>
+</div>
+<!-- Rx 3 -->
+<div class="bg-surface-container-low p-2 rounded-lg flex items-start justify-between">
+<div>
+<div class="flex items-center gap-1">
+<strong class="font-title-sm text-title-sm text-on-surface font-bold">Chlorhexidine 0.2% Rinse</strong>
+<span class="font-label-sm text-label-sm bg-surface-container-highest text-secondary px-1 rounded">Topical</span>
+</div>
+<p class="font-body-sm text-body-sm text-secondary text-[11px]">10ml gargle BD × 7 days post morning &amp; night</p>
+</div>
+<span class="font-code-sm text-code-sm bg-surface-container-lowest text-primary px-1.5 py-0.5 rounded font-bold shadow-sm">1 Btl</span>
+</div>
+</div>
+</div>
+<!-- Transfer & Final Clinical Actions -->
+<div class="mt-space-md pt-space-xs space-y-space-xs">
+<button class="w-full bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md py-2.5 rounded-lg font-bold shadow-sm flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined text-[18px]">chair</span>
+<span>Fast Transfer to Operatory Chair</span>
+</button>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md py-1.5 rounded transition-colors text-center font-semibold">
+              Sign E-Rx (F4)
+            </button>
+<button class="bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-md text-label-md py-1.5 rounded transition-colors text-center font-semibold">
+              Print Pharmacy Slip
+            </button>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div></main></div><footer class="fixed bottom-0 left-0 right-0 h-7 bg-surface-container-lowest border-t border-outline-variant/30 z-50 flex items-center justify-between px-space-md"><div class="flex items-center gap-space-md text-on-surface-variant font-label-sm text-label-sm"><div class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span><span>Dental Cloud Sync: 99.99% Real-time</span></div><div class="h-3 w-px bg-outline-variant/60"></div><div class="flex items-center gap-1 text-on-surface font-medium"><span class="material-symbols-outlined text-[14px] text-primary">chair</span><span>Current Chair: <strong class="text-primary">Operatory 2 (A-dec 500)</strong></span></div><div class="h-3 w-px bg-outline-variant/60"></div><div class="flex items-center gap-1 text-on-surface font-medium"><span class="material-symbols-outlined text-[14px] text-secondary">record_voice_over</span><span>Next Up: <strong class="text-tertiary">Token D-14</strong> (R. Gupta - Crown Prep #46)</span></div></div><div class="flex items-center gap-space-md text-secondary font-label-sm text-label-sm"><span class="font-code-sm text-code-sm">Docplix-DENT v4.2.1-OMS</span><div class="h-3 w-px bg-outline-variant/60"></div><span class="font-code-sm text-code-sm text-on-surface font-semibold">IST 11:42:18 AM</span></div></footer></body></html>

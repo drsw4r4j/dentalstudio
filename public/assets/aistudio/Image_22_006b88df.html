@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DocPlix-RX Dental Examination &amp; Charting</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              orange: '#f97316',
+              'orange-hover': '#ea580c',
+              'orange-light': '#ffedd5',
+              dark: '#1e293b'
+            }
+          },
+          fontFamily: {
+            sans: ['"Samsung Sans"', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      font-family: 'Samsung Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Custom scrollbars */
+    ::-webkit-scrollbar {
+      height: 6px;
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+    .grid-cols-16 {
+      display: grid;
+      grid-template-columns: repeat(16, minmax(0, 1fr)) !important;
+    }
+  </style>
+</head>
+<body class="bg-[#f8fafc] text-slate-800 min-h-screen flex flex-col">
+<!-- TOP HEADER (DocPlix-RX Navigation) -->
+<header class="h-14 bg-white border-b border-slate-200 px-6 flex items-center justify-between shadow-[0_1px_3px_rgba(0,0,0,0.03)] z-40 sticky top-0">
+<!-- Left: Brand Logo & Main Nav Tabs -->
+<div class="flex items-center gap-7">
+<div class="flex items-center gap-2 cursor-pointer">
+<div class="w-8 h-8 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center border border-emerald-500/20 font-bold text-lg">
+<span class="material-symbols-outlined text-[20px] text-emerald-600">health_and_safety</span>
+</div>
+<div class="flex flex-col">
+<span class="text-[17px] font-bold tracking-tight text-slate-900 leading-none">DocPlix<span class="text-brand-orange text-xs align-super ml-0.5 font-extrabold">RX</span></span>
+<span class="text-[8px] text-slate-400 tracking-wider font-semibold uppercase">WE CARE, LET'S INNOVATE!</span>
+</div>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden md:flex items-center gap-1 text-[13px] font-medium text-slate-600">
+<button class="flex items-center gap-0.5 px-2.5 py-1.5 rounded-md hover:text-slate-900 hover:bg-slate-50 transition-colors">
+          Appointments <span class="material-symbols-outlined text-[15px] text-slate-400">arrow_drop_down</span>
+</button>
+<button class="flex items-center gap-0.5 px-2.5 py-1.5 rounded-md text-brand-orange bg-orange-50 font-semibold border-b-2 border-brand-orange transition-colors">
+          Patients <span class="material-symbols-outlined text-[15px] text-brand-orange">arrow_drop_down</span>
+</button>
+<button class="flex items-center gap-0.5 px-2.5 py-1.5 rounded-md hover:text-slate-900 hover:bg-slate-50 transition-colors">
+          OPD <span class="material-symbols-outlined text-[15px] text-slate-400">arrow_drop_down</span>
+</button>
+<button class="flex items-center gap-0.5 px-2.5 py-1.5 rounded-md hover:text-slate-900 hover:bg-slate-50 transition-colors">
+          Pharmacy <span class="material-symbols-outlined text-[15px] text-slate-400">arrow_drop_down</span>
+</button>
+<button class="flex items-center gap-0.5 px-2.5 py-1.5 rounded-md hover:text-slate-900 hover:bg-slate-50 transition-colors">
+          Store <span class="material-symbols-outlined text-[15px] text-slate-400">arrow_drop_down</span>
+</button>
+<button class="flex items-center gap-0.5 px-2.5 py-1.5 rounded-md hover:text-slate-900 hover:bg-slate-50 transition-colors">
+          Staff <span class="material-symbols-outlined text-[15px] text-slate-400">arrow_drop_down</span>
+</button>
+<button class="flex items-center gap-0.5 px-2.5 py-1.5 rounded-md hover:text-slate-900 hover:bg-slate-50 transition-colors">
+          Dental Lab <span class="material-symbols-outlined text-[15px] text-slate-400">arrow_drop_down</span>
+</button>
+<button class="flex items-center gap-0.5 px-2.5 py-1.5 rounded-md hover:text-slate-900 hover:bg-slate-50 transition-colors">
+          Accounts <span class="material-symbols-outlined text-[15px] text-slate-400">arrow_drop_down</span>
+</button>
+</nav>
+</div>
+<!-- Right Utility Area -->
+<div class="flex items-center gap-4">
+<div class="relative w-64 hidden sm:block">
+<input class="w-full pl-3 pr-8 py-1.5 text-xs bg-slate-50 border border-slate-200 rounded-md text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-brand-orange focus:border-brand-orange focus:bg-white transition-all" placeholder="Search Patient" type="text"/>
+<span class="material-symbols-outlined absolute right-2.5 top-2 text-[16px] text-brand-orange cursor-pointer">search</span>
+</div>
+<button class="p-1.5 text-slate-500 hover:text-slate-700 rounded-full hover:bg-slate-100" title="Hospital Branch">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+</button>
+<button class="p-1.5 text-slate-500 hover:text-slate-700 rounded-full hover:bg-slate-100" title="Settings">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+</button>
+<div class="flex items-center gap-2 pl-1 border-l border-slate-200">
+<img alt="Dr. Swaraj" class="w-8 h-8 rounded-full border border-slate-200 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcD4MwPD83PSlI5O2O7lFQ3fWI7KYSutc7NbEzc5cyyP_FVYLUfVBJR2bux1o5L1DAzfXlmW-tn2BEHTTSAR8D4jN7XS0LFHRDm60CEUK5LX4hyjI7e_Karmfv-MQ4TIBTmuz1JxMGjOcZB6spzfxQ9dTogGFUGGfa5UmhIoLLshwNRbu4-cj-nZe9AzILjRmyMg0fNih2Dj-OwCxqCZCGHHNz4xXMB10tcIsKh2E9Wxx_h0b5MiU"/>
+<span class="text-xs font-semibold text-slate-700 hidden lg:inline">Dr. Swaraj</span>
+</div>
+</div>
+</header>
+<!-- SUB-BAR: Modal Title / Patient Clinical Context -->
+<div class="bg-white border-b border-slate-200 px-6 py-2.5 flex flex-wrap items-center justify-between gap-3 shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
+<div class="flex items-center gap-4">
+<h1 class="text-base font-bold text-slate-900 tracking-tight flex items-center gap-1.5">
+<span>Add New Examination</span>
+</h1>
+<div class="h-4 w-px bg-slate-200"></div>
+<div class="flex items-center gap-2.5 text-xs">
+<span class="font-bold text-slate-800">Eleanor Vance</span>
+<span class="text-slate-400">•</span>
+<span class="text-slate-500">36y / Female</span>
+<span class="px-2 py-0.5 bg-slate-100 text-slate-600 rounded font-mono font-medium text-[11px]">UHID #DP-984210</span>
+<span class="text-slate-500 hidden sm:inline"><span class="material-symbols-outlined text-[13px] align-middle text-slate-400">call</span> +91 98765 43210</span>
+</div>
+</div>
+<!-- Right Side Context Tags & Close -->
+<div class="flex items-center gap-3">
+<span class="inline-flex items-center gap-1 text-[11px] font-semibold text-rose-700 bg-rose-50 border border-rose-200 px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-rose-600"></span>
+        Allergy: Penicillin (Severe)
+      </span>
+<span class="text-[11px] font-medium text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-full">
+        Visit: Restorative &amp; Endo
+      </span>
+<button class="text-slate-400 hover:text-slate-700 p-1 rounded-md" title="Close / Discard">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+</div>
+<!-- MAIN CANVAS WORKSPACE -->
+<main class="flex-1 max-w-[1920px] w-full mx-auto p-4 md:p-6 space-y-4">
+<!-- ODONTOGRAM CONTAINER CARD -->
+<div class="bg-white rounded-xl border border-slate-200 shadow-sm p-5 md:p-6 space-y-5">
+<!-- Top Chart Switcher Buttons (Pill button styling matching Image 3) -->
+<div class="flex items-center gap-3">
+<button class="bg-brand-orange hover:bg-brand-orange-hover text-white text-xs font-semibold px-4 py-2 rounded-full shadow-sm transition-colors">
+          Normal Tooth Chart
+        </button>
+<button class="bg-transparent hover:bg-slate-50 text-slate-500 text-xs font-medium px-4 py-2 rounded-full transition-colors">
+          Pediatric Tooth Chart
+        </button>
+</div>
+<!-- Clinical Examination & Complaint Inputs Bar (From Image 3) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 pt-2">
+<!-- Date -->
+<div class="md:col-span-3 space-y-1">
+<label class="block text-xs font-medium text-slate-500">Date</label>
+<div class="relative">
+<input class="w-full text-xs bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-700 focus:outline-none focus:ring-1 focus:ring-brand-orange focus:border-brand-orange focus:bg-white transition-all font-mono" type="text" value="10/23/2026"/>
+<span class="material-symbols-outlined absolute right-3 top-2 text-[16px] text-slate-500 pointer-events-none">calendar_today</span>
+</div>
+</div>
+<!-- Chief Complaints -->
+<div class="md:col-span-4 space-y-1">
+<label class="block text-xs font-medium text-slate-500">Chief Complaints</label>
+<div class="relative">
+<select class="w-full text-xs bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-700 focus:outline-none focus:ring-1 focus:ring-brand-orange focus:border-brand-orange focus:bg-white appearance-none transition-all pr-8">
+<option selected="">Select...</option>
+<option>Tooth pain, sensitivity, mastication stress</option>
+<option>Acute Toothache (Continuous throbbing)</option>
+<option>Cold &amp; Thermal Sensitivity</option>
+<option>Broken / Chipped Tooth or Restoration</option>
+<option>Bleeding Gums &amp; Halitosis</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-[16px] text-slate-400 pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- History of Present Illness -->
+<div class="md:col-span-5 space-y-1">
+<label class="block text-xs font-medium text-slate-500">History of Present Illness</label>
+<input class="w-full text-xs bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-700 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-brand-orange focus:border-brand-orange focus:bg-white transition-all" placeholder="Write here..." type="text" value="Severe spontaneous throbbing pain in upper right quadrant on cold &amp; mastication × 4 days"/>
+</div>
+</div>
+<!-- Oral Examinations Legend Bar (Verbatim from image 3) -->
+<div class="py-2 px-3 bg-slate-50/70 rounded-lg border border-slate-100 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs">
+<span class="font-semibold text-slate-500 text-xs">Oral Examinations</span>
+<div class="flex items-center gap-1.5 cursor-pointer hover:opacity-80">
+<span class="w-2.5 h-2.5 rounded-full bg-[#ef4444]"></span>
+<span class="text-slate-600 font-medium">Caries</span>
+</div>
+<div class="flex items-center gap-1.5 cursor-pointer hover:opacity-80">
+<span class="w-2.5 h-2.5 rounded-full bg-[#f59e0b]"></span>
+<span class="text-slate-600 font-medium">Tooth Fracture</span>
+</div>
+<div class="flex items-center gap-1.5 cursor-pointer hover:opacity-80">
+<span class="w-2.5 h-2.5 rounded-full bg-[#a855f7]"></span>
+<span class="text-slate-600 font-medium">Pocket</span>
+</div>
+<div class="flex items-center gap-1.5 cursor-pointer hover:opacity-80">
+<span class="w-2.5 h-2.5 rounded-full bg-[#dc2626]"></span>
+<span class="text-slate-600 font-medium">Bleeding on Probing</span>
+</div>
+<div class="flex items-center gap-1.5 cursor-pointer hover:opacity-80">
+<span class="w-2.5 h-2.5 rounded-full bg-[#f97316]"></span>
+<span class="text-slate-600 font-medium">Gingival Inflammation</span>
+</div>
+<div class="flex items-center gap-1.5 cursor-pointer hover:opacity-80">
+<span class="w-2.5 h-2.5 rounded-full bg-[#854d0e]"></span>
+<span class="text-slate-600 font-medium">Discoloration</span>
+</div>
+<div class="flex items-center gap-1.5 cursor-pointer hover:opacity-80">
+<span class="w-2.5 h-2.5 rounded-full bg-[#84cc16]"></span>
+<span class="text-slate-600 font-medium">Diastema</span>
+</div>
+<div class="flex items-center gap-1.5 cursor-pointer hover:opacity-80">
+<span class="w-2.5 h-2.5 rounded-full bg-[#06b6d4]"></span>
+<span class="text-slate-600 font-medium">Abrasion</span>
+</div>
+<div class="flex items-center gap-1.5 cursor-pointer hover:opacity-80">
+<span class="w-2.5 h-2.5 rounded-full bg-[#10b981]"></span>
+<span class="text-slate-600 font-medium">Pus Discharge</span>
+</div>
+<div class="flex items-center gap-1.5 cursor-pointer hover:opacity-80">
+<span class="w-2.5 h-2.5 rounded-full bg-[#64748b]"></span>
+<span class="text-slate-600 font-medium">Attrition</span>
+</div>
+</div>
+<!-- ODONTOGRAM INTERACTIVE CHART: STRICT HORIZONTAL ARCH LAYOUT AS IN IMAGE 3 -->
+<div class="border border-slate-200 rounded-xl p-5 bg-white space-y-6">
+<!-- Arch & Quadrant Selection Filter Row -->
+<div class="flex flex-wrap items-center gap-x-8 gap-y-2 text-xs font-normal text-slate-600 pb-3 border-b border-slate-100">
+<span class="text-slate-500 font-normal mr-2">Tooth</span>
+<label class="flex items-center gap-1.5 cursor-pointer hover:text-slate-900">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-brand-orange" type="checkbox"/>
+<span>1st Quadrant</span>
+</label>
+<label class="flex items-center gap-1.5 cursor-pointer hover:text-slate-900">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-brand-orange" type="checkbox"/>
+<span>2nd Quadrant</span>
+</label>
+<label class="flex items-center gap-1.5 cursor-pointer hover:text-slate-900">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-brand-orange" type="checkbox"/>
+<span>3rd Quadrant</span>
+</label>
+<label class="flex items-center gap-1.5 cursor-pointer hover:text-slate-900">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-brand-orange" type="checkbox"/>
+<span>4th Quadrant</span>
+</label>
+<label class="flex items-center gap-1.5 cursor-pointer hover:text-slate-900">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-brand-orange" type="checkbox"/>
+<span>Upper Arch</span>
+</label>
+<label class="flex items-center gap-1.5 cursor-pointer hover:text-slate-900">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-brand-orange" type="checkbox"/>
+<span>Lower Arch</span>
+</label>
+<label class="flex items-center gap-1.5 cursor-pointer hover:text-slate-900">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-brand-orange" type="checkbox"/>
+<span>Full Mouth</span>
+</label>
+</div>
+<!-- 16-TOOTH HORIZONTAL CHART CONTAINER -->
+<div class="w-full overflow-x-auto pb-4">
+<div class="min-w-[1050px] space-y-6">
+<!-- UPPER MAXILLARY ARCH (Horizontal 16 Teeth: 18 -> 28) -->
+<div class="w-full">
+<!-- 16 Columns side by side -->
+<div class="grid grid-cols-16 gap-2 w-full">
+<!-- Tooth 18 -->
+<div class="flex flex-col items-center">
+<!-- Row A: Anatomical Illustration -->
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M12,4 Q14,20 16,36 Q20,38 24,36 Q26,20 28,4 Q24,15 20,4 Q16,15 12,4 Z" fill="#fef08a" stroke="#1f2937" stroke-linejoin="round" stroke-width="1.8"></path>
+<path d="M8,36 C6,48 7,65 14,67 C20,68 20,66 20,66 C20,66 20,68 26,67 C33,65 34,48 32,36 Z" fill="#fde047" stroke="#1f2937" stroke-linejoin="round" stroke-width="1.8"></path>
+</svg>
+<!-- Row B: 5-segment circular surface chart -->
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="white" r="6" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="29.5" y2="22.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="29.5" y2="22.5"></line>
+</svg>
+<!-- Row C: Checkbox + Number -->
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mt-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>18</span>
+</label>
+</div>
+<!-- Tooth 17 -->
+<div class="flex flex-col items-center">
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M11,4 Q13,20 15,36 Q20,38 25,36 Q27,20 29,4 Q24,16 20,4 Q16,16 11,4 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M7,36 C5,50 6,66 14,68 C20,69 20,67 20,67 C20,67 20,69 26,68 C34,66 35,50 33,36 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="white" r="6" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="29.5" y2="22.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="29.5" y2="22.5"></line>
+</svg>
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mt-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>17</span>
+</label>
+</div>
+<!-- Tooth 16 -->
+<div class="flex flex-col items-center">
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M10,2 Q13,20 15,36 Q20,38 25,36 Q27,20 30,2 Q24,18 20,2 Q16,18 10,2 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M6,36 C4,52 6,68 14,69 C20,70 20,68 20,68 C20,68 20,70 26,69 C34,68 36,52 34,36 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="white" r="6" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="29.5" y2="22.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="29.5" y2="22.5"></line>
+</svg>
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mt-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>16</span>
+</label>
+</div>
+<!-- Tooth 15 -->
+<div class="flex flex-col items-center">
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M16,5 Q18,22 18,36 Q22,36 22,22 Q24,5 20,5 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M11,36 C8,48 9,64 16,66 C20,67 24,66 29,64 C32,48 29,36 29,36 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="white" r="6" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="29.5" y2="22.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="29.5" y2="22.5"></line>
+</svg>
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mt-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>15</span>
+</label>
+</div>
+<!-- Tooth 14 -->
+<div class="flex flex-col items-center">
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M15,4 Q18,22 17,36 Q23,36 23,22 Q25,4 20,4 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M10,36 C8,48 9,65 17,67 C21,68 25,67 30,65 C33,48 30,36 30,36 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="white" r="6" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="29.5" y2="22.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="29.5" y2="22.5"></line>
+</svg>
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mt-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>14</span>
+</label>
+</div>
+<!-- Tooth 13 -->
+<div class="flex flex-col items-center">
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M17,2 Q20,20 18,36 Q23,36 21,20 Q23,2 20,2 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M12,36 C10,48 12,65 19,69 C21,69 28,65 30,48 C30,36 12,36 12,36 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6" x2="30" y1="18" y2="18"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="18" x2="18" y1="6" y2="30"></line>
+</svg>
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mt-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>13</span>
+</label>
+</div>
+<!-- Tooth 12 -->
+<div class="flex flex-col items-center">
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M17,4 Q19,22 18,36 Q22,36 21,22 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M13,36 C11,46 12,65 19,67 C26,67 27,46 27,36 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6" x2="30" y1="18" y2="18"></line>
+</svg>
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mt-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>12</span>
+</label>
+</div>
+<!-- Tooth 11 -->
+<div class="flex flex-col items-center">
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M17,2 Q20,22 18,36 Q22,36 22,22 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M11,36 C10,48 11,67 19,68 C27,67 28,48 27,36 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6" x2="30" y1="18" y2="18"></line>
+</svg>
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mt-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>11</span>
+</label>
+</div>
+<!-- Tooth 21 -->
+<div class="flex flex-col items-center">
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M22,2 Q19,22 21,36 Q17,36 17,22 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M12,36 C11,48 12,67 20,68 C28,67 29,48 28,36 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6" x2="30" y1="18" y2="18"></line>
+</svg>
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mt-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>21</span>
+</label>
+</div>
+<!-- Tooth 22 -->
+<div class="flex flex-col items-center">
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M22,4 Q20,22 21,36 Q17,36 18,22 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M12,36 C12,46 13,67 20,67 C27,65 28,46 26,36 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6" x2="30" y1="18" y2="18"></line>
+</svg>
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mt-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>22</span>
+</label>
+</div>
+<!-- Tooth 23 -->
+<div class="flex flex-col items-center">
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M22,2 Q19,20 21,36 Q16,36 18,20 Q16,2 19,2 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M9,36 C11,48 18,65 20,69 C27,65 29,48 27,36 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6" x2="30" y1="18" y2="18"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="18" x2="18" y1="6" y2="30"></line>
+</svg>
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mt-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>23</span>
+</label>
+</div>
+<!-- Tooth 24 -->
+<div class="flex flex-col items-center">
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M23,4 Q20,22 21,36 Q16,36 16,22 Q14,4 19,4 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M9,36 C7,48 10,65 19,67 C27,67 31,48 29,36 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="white" r="6" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="29.5" y2="22.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="29.5" y2="22.5"></line>
+</svg>
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mt-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>24</span>
+</label>
+</div>
+<!-- Tooth 25 -->
+<div class="flex flex-col items-center">
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M22,5 Q20,22 20,36 Q17,36 17,22 Q15,5 19,5 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M10,36 C8,48 11,64 19,66 C27,66 30,48 28,36 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="white" r="6" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="29.5" y2="22.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="29.5" y2="22.5"></line>
+</svg>
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mt-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>25</span>
+</label>
+</div>
+<!-- Tooth 26 -->
+<div class="flex flex-col items-center">
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M28,2 Q25,20 23,36 Q19,38 14,36 Q12,20 9,2 Q15,18 19,2 Q23,18 28,2 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M5,36 C3,52 5,68 13,69 C19,70 19,68 19,68 C19,68 19,70 25,69 C33,68 35,52 33,36 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="white" r="6" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="29.5" y2="22.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="29.5" y2="22.5"></line>
+</svg>
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mt-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>26</span>
+</label>
+</div>
+<!-- Tooth 27 -->
+<div class="flex flex-col items-center">
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M28,4 Q26,20 24,36 Q19,38 14,36 Q12,20 10,4 Q15,16 19,4 Q23,16 28,4 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M6,36 C4,50 5,66 13,68 C19,69 19,67 19,67 C19,67 19,69 25,68 C33,66 34,50 32,36 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="white" r="6" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="29.5" y2="22.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="29.5" y2="22.5"></line>
+</svg>
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mt-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>27</span>
+</label>
+</div>
+<!-- Tooth 28 -->
+<div class="flex flex-col items-center">
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M27,4 Q25,20 23,36 Q19,38 15,36 Q13,20 11,4 Q15,15 19,4 Q23,15 27,4 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M7,36 C5,48 6,65 13,67 C19,68 19,66 19,66 C19,66 19,68 25,67 C32,65 33,48 31,36 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="white" r="6" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="29.5" y2="22.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="29.5" y2="22.5"></line>
+</svg>
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mt-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>28</span>
+</label>
+</div>
+</div>
+</div>
+<!-- LOWER MANDIBULAR ARCH (Horizontal 16 Teeth: 48 -> 38) -->
+<div class="w-full pt-4">
+<!-- 16 Columns side by side -->
+<div class="grid grid-cols-16 gap-2 w-full">
+<!-- Tooth 48 -->
+<div class="flex flex-col items-center">
+<!-- Row A: Checkbox + Number -->
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mb-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>48</span>
+</label>
+<!-- Row B: 5-segment circular surface chart -->
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="white" r="6" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="29.5" y2="22.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="29.5" y2="22.5"></line>
+</svg>
+<!-- Row C: Anatomical Illustration (Roots down) -->
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M8,4 C6,18 7,34 14,36 C20,37 20,35 20,35 C20,35 20,37 26,36 C33,34 34,18 32,4 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M12,36 Q14,52 12,68 Q16,56 20,68 Q24,56 28,68 Q26,52 28,36 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+</div>
+<!-- Tooth 47 -->
+<div class="flex flex-col items-center">
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mb-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>47</span>
+</label>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="white" r="6" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="29.5" y2="22.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="29.5" y2="22.5"></line>
+</svg>
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M8,4 C6,18 7,34 14,36 C20,37 20,35 20,35 C20,35 20,37 26,36 C33,34 34,18 32,4 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M12,36 Q14,52 12,68 Q16,56 20,68 Q24,56 28,68 Q26,52 28,36 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+</div>
+<!-- Tooth 46 -->
+<div class="flex flex-col items-center">
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mb-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>46</span>
+</label>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="white" r="6" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="29.5" y2="22.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="29.5" y2="22.5"></line>
+</svg>
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M7,4 C5,18 7,34 14,36 C20,37 20,35 20,35 C20,35 20,37 26,36 C33,34 35,18 33,4 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M12,36 Q14,52 12,68 Q16,56 20,68 Q24,56 28,68 Q26,52 28,36 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+</div>
+<!-- Tooth 45 -->
+<div class="flex flex-col items-center">
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mb-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>45</span>
+</label>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="white" r="6" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="29.5" y2="22.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="29.5" y2="22.5"></line>
+</svg>
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M11,4 C8,18 9,34 16,36 C20,37 24,36 29,34 C32,18 29,4 29,4 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M16,36 Q18,54 18,67 Q22,67 22,54 Q24,36 20,36 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+</div>
+<!-- Tooth 44 -->
+<div class="flex flex-col items-center">
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mb-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>44</span>
+</label>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="white" r="6" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="29.5" y2="22.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="29.5" y2="22.5"></line>
+</svg>
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M11,4 C8,18 9,34 16,36 C20,37 24,36 29,34 C32,18 29,4 29,4 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M16,36 Q18,54 18,67 Q22,67 22,54 Q24,36 20,36 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+</div>
+<!-- Tooth 43 -->
+<div class="flex flex-col items-center">
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mb-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>43</span>
+</label>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6" x2="30" y1="18" y2="18"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="18" x2="18" y1="6" y2="30"></line>
+</svg>
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M12,4 C10,18 12,35 19,37 C21,37 28,35 30,18 C30,4 12,4 12,4 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M17,37 Q20,54 18,68 Q23,68 21,54 Q23,37 20,37 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+</div>
+<!-- Tooth 42 -->
+<div class="flex flex-col items-center">
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mb-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>42</span>
+</label>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6" x2="30" y1="18" y2="18"></line>
+</svg>
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M13,4 C11,18 12,35 19,37 C26,37 27,18 27,4 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M17,37 Q19,54 18,68 Q22,68 21,54 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+</div>
+<!-- Tooth 41 -->
+<div class="flex flex-col items-center">
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mb-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>41</span>
+</label>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6" x2="30" y1="18" y2="18"></line>
+</svg>
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M13,4 C11,18 12,35 19,37 C26,37 27,18 27,4 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M17,37 Q19,54 18,68 Q22,68 21,54 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+</div>
+<!-- Tooth 31 -->
+<div class="flex flex-col items-center">
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mb-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>31</span>
+</label>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6" x2="30" y1="18" y2="18"></line>
+</svg>
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M13,4 C11,18 12,35 19,37 C26,37 27,18 27,4 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M17,37 Q19,54 18,68 Q22,68 21,54 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+</div>
+<!-- Tooth 32 -->
+<div class="flex flex-col items-center">
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mb-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>32</span>
+</label>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6" x2="30" y1="18" y2="18"></line>
+</svg>
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M13,4 C11,18 12,35 19,37 C26,37 27,18 27,4 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M17,37 Q19,54 18,68 Q22,68 21,54 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+</div>
+<!-- Tooth 33 -->
+<div class="flex flex-col items-center">
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mb-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>33</span>
+</label>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6" x2="30" y1="18" y2="18"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="18" x2="18" y1="6" y2="30"></line>
+</svg>
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M12,4 C10,18 12,35 19,37 C21,37 28,35 30,18 C30,4 12,4 12,4 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M17,37 Q20,54 18,68 Q23,68 21,54 Q23,37 20,37 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+</div>
+<!-- Tooth 34 -->
+<div class="flex flex-col items-center">
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mb-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>34</span>
+</label>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="white" r="6" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="29.5" y2="22.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="29.5" y2="22.5"></line>
+</svg>
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M11,4 C8,18 9,34 16,36 C20,37 24,36 29,34 C32,18 29,4 29,4 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M16,36 Q18,54 18,67 Q22,67 22,54 Q24,36 20,36 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+</div>
+<!-- Tooth 35 -->
+<div class="flex flex-col items-center">
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mb-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>35</span>
+</label>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="white" r="6" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="29.5" y2="22.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="29.5" y2="22.5"></line>
+</svg>
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M11,4 C8,18 9,34 16,36 C20,37 24,36 29,34 C32,18 29,4 29,4 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M16,36 Q18,54 18,67 Q22,67 22,54 Q24,36 20,36 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+</div>
+<!-- Tooth 36 -->
+<div class="flex flex-col items-center">
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mb-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>36</span>
+</label>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="white" r="6" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="29.5" y2="22.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="29.5" y2="22.5"></line>
+</svg>
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M8,4 C6,18 7,34 14,36 C20,37 20,35 20,35 C20,35 20,37 26,36 C33,34 34,18 32,4 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M12,36 Q14,52 12,68 Q16,56 20,68 Q24,56 28,68 Q26,52 28,36 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+</div>
+<!-- Tooth 37 -->
+<div class="flex flex-col items-center">
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mb-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>37</span>
+</label>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="white" r="6" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="29.5" y2="22.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="29.5" y2="22.5"></line>
+</svg>
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M8,4 C6,18 7,34 14,36 C20,37 20,35 20,35 C20,35 20,37 26,36 C33,34 34,18 32,4 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M12,36 Q14,52 12,68 Q16,56 20,68 Q24,56 28,68 Q26,52 28,36 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+</div>
+<!-- Tooth 38 -->
+<div class="flex flex-col items-center">
+<label class="flex items-center gap-1 text-[11px] font-medium text-slate-700 mb-1 cursor-pointer">
+<input class="w-3.5 h-3.5 rounded border-slate-300 text-brand-orange focus:ring-0" type="checkbox"/>
+<span>38</span>
+</label>
+<svg class="w-8 h-8 my-1 cursor-pointer" viewbox="0 0 36 36">
+<circle cx="18" cy="18" fill="white" r="16" stroke="#64748b" stroke-width="1.2"></circle>
+<circle cx="18" cy="18" fill="white" r="6" stroke="#64748b" stroke-width="1.2"></circle>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="6.5" y2="13.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="6.5" x2="13.5" y1="29.5" y2="22.5"></line>
+<line stroke="#64748b" stroke-width="1.2" x1="29.5" x2="22.5" y1="29.5" y2="22.5"></line>
+</svg>
+<svg class="w-10 h-16" viewbox="0 0 40 70">
+<path d="M8,4 C6,18 7,34 14,36 C20,37 20,35 20,35 C20,35 20,37 26,36 C33,34 34,18 32,4 Z" fill="#fde047" stroke="#1f2937" stroke-width="1.8"></path>
+<path d="M12,36 Q14,52 12,68 Q16,56 20,68 Q24,56 28,68 Q26,52 28,36 Z" fill="#fef08a" stroke="#1f2937" stroke-width="1.8"></path>
+</svg>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- BOTTOM CLINICAL EXAMINATION & TREATMENT DETAILS -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-4 pt-2">
+<!-- Tooth Identifier -->
+<div class="md:col-span-3 space-y-1">
+<label class="block text-xs font-medium text-slate-500">Tooth</label>
+<input class="w-full text-xs bg-slate-100 border border-slate-200 rounded-lg px-3 py-2 text-slate-700 font-semibold cursor-default" readonly="" type="text" value="16 - Upper Right First Molar (Maxillary)"/>
+</div>
+<!-- Investigations -->
+<div class="md:col-span-3 space-y-1">
+<label class="block text-xs font-medium text-slate-500">Investigations</label>
+<div class="relative">
+<select class="w-full text-xs bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-700 focus:outline-none focus:ring-1 focus:ring-brand-orange focus:border-brand-orange focus:bg-white appearance-none transition-all pr-8">
+<option selected="">Intraoral PA X-Ray, Vitality Test</option>
+<option>OPG (Orthopantomogram)</option>
+<option>CBCT 3D Sector Scan</option>
+<option>Bitewing Radiography</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-[16px] text-slate-400 pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Oral Examinations Diagnosis -->
+<div class="md:col-span-3 space-y-1">
+<label class="block text-xs font-medium text-slate-500">Oral Examinations</label>
+<div class="relative">
+<select class="w-full text-xs bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-700 focus:outline-none focus:ring-1 focus:ring-brand-orange focus:border-brand-orange focus:bg-white appearance-none transition-all pr-8">
+<option selected="">Caries (Deep occlusal with pulp involvement)</option>
+<option>Tooth Fracture (Coronal)</option>
+<option>Periodontal Pocket (≥5mm)</option>
+<option>Periapical Radiolucency</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-[16px] text-slate-400 pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Recommended Treatment Plan -->
+<div class="md:col-span-3 space-y-1">
+<label class="block text-xs font-medium text-slate-500">Recommended Treatment</label>
+<input class="w-full text-xs bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-slate-700 focus:outline-none focus:ring-1 focus:ring-brand-orange focus:border-brand-orange focus:bg-white transition-all" type="text" value="Root Canal Treatment (RCT) + Zirconia Crown"/>
+</div>
+</div>
+</div>
+</main>
+<!-- BOTTOM ACTION FOOTER BAR (Verbatim Image 3 action footer) -->
+<footer class="bg-white border-t border-slate-200 px-6 py-3 flex items-center justify-between sticky bottom-0 z-30 shadow-[0_-2px_10px_rgba(0,0,0,0.03)]">
+<div class="flex items-center gap-3 text-xs text-slate-500">
+<span class="flex items-center gap-1 font-medium">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+        DocPlix EHR Cloud Connected
+      </span>
+<span class="text-slate-300">|</span>
+<span>Chair: <strong class="text-slate-700 font-semibold">Operatory 1</strong></span>
+</div>
+<!-- Main Action Buttons -->
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 text-xs font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-100 rounded-lg transition-colors">
+        Discard
+      </button>
+<button class="px-4 py-2 text-xs font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors flex items-center gap-1.5 border border-slate-200">
+<span class="material-symbols-outlined text-[16px]">print</span>
+        Print Dental Chart
+      </button>
+<button class="px-4 py-2 text-xs font-medium text-slate-700 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors flex items-center gap-1.5 border border-slate-200">
+<span class="material-symbols-outlined text-[16px]">post_add</span>
+        Add to Treatment Plan
+      </button>
+<!-- Primary Orange Button matching Image 3 with floppy save icon -->
+<button class="px-5 py-2 text-xs font-semibold text-white bg-brand-orange hover:bg-brand-orange-hover rounded-lg shadow-sm transition-all flex items-center gap-1.5 active:scale-95">
+<span class="material-symbols-outlined text-[16px]">save</span>
+        Save Examination
+      </button>
+</div>
+</footer>
+</body></html>

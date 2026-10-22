@@ -1,0 +1,6 @@
+{
+  "name": "Docplix EHR & Dental Studio Workstation",
+  "description": "Next-generation Clinical Workstation & Oral Surgery Suite featuring unified patient charts, interactive odontograms, operatory queues, pharmacy POS ERP, and omni-channel WhatsApp CRM.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

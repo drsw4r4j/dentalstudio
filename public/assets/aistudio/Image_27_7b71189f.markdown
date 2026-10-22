@@ -1,0 +1,223 @@
+---
+name: Clinical Workstation System
+colors:
+  surface: '#faf8ff'
+  surface-dim: '#d2d9f4'
+  surface-bright: '#faf8ff'
+  surface-container-lowest: '#ffffff'
+  surface-container-low: '#f2f3ff'
+  surface-container: '#eaedff'
+  surface-container-high: '#e2e7ff'
+  surface-container-highest: '#dae2fd'
+  on-surface: '#131b2e'
+  on-surface-variant: '#3d4947'
+  inverse-surface: '#283044'
+  inverse-on-surface: '#eef0ff'
+  outline: '#6d7a77'
+  outline-variant: '#bcc9c6'
+  surface-tint: '#006a61'
+  primary: '#00685f'
+  on-primary: '#ffffff'
+  primary-container: '#008378'
+  on-primary-container: '#f4fffc'
+  inverse-primary: '#6bd8cb'
+  secondary: '#515f74'
+  on-secondary: '#ffffff'
+  secondary-container: '#d5e3fd'
+  on-secondary-container: '#57657b'
+  tertiary: '#4b41e1'
+  on-tertiary: '#ffffff'
+  tertiary-container: '#645efb'
+  on-tertiary-container: '#fffbff'
+  error: '#ba1a1a'
+  on-error: '#ffffff'
+  error-container: '#ffdad6'
+  on-error-container: '#93000a'
+  primary-fixed: '#89f5e7'
+  primary-fixed-dim: '#6bd8cb'
+  on-primary-fixed: '#00201d'
+  on-primary-fixed-variant: '#005049'
+  secondary-fixed: '#d5e3fd'
+  secondary-fixed-dim: '#b9c7e0'
+  on-secondary-fixed: '#0d1c2f'
+  on-secondary-fixed-variant: '#3a485c'
+  tertiary-fixed: '#e2dfff'
+  tertiary-fixed-dim: '#c3c0ff'
+  on-tertiary-fixed: '#0f0069'
+  on-tertiary-fixed-variant: '#3323cc'
+  background: '#faf8ff'
+  on-background: '#131b2e'
+  surface-variant: '#dae2fd'
+typography:
+  headline-lg:
+    fontFamily: Inter
+    fontSize: 1.5rem
+    fontWeight: '600'
+    lineHeight: 2rem
+    letterSpacing: -0.02em
+  headline-md:
+    fontFamily: Inter
+    fontSize: 1.25rem
+    fontWeight: '600'
+    lineHeight: 1.75rem
+    letterSpacing: -0.015em
+  headline-sm:
+    fontFamily: Inter
+    fontSize: 1.125rem
+    fontWeight: '600'
+    lineHeight: 1.5rem
+    letterSpacing: -0.01em
+  title-md:
+    fontFamily: Inter
+    fontSize: 0.9375rem
+    fontWeight: '600'
+    lineHeight: 1.375rem
+    letterSpacing: -0.005em
+  title-sm:
+    fontFamily: Inter
+    fontSize: 0.875rem
+    fontWeight: '600'
+    lineHeight: 1.25rem
+  body-lg:
+    fontFamily: Inter
+    fontSize: 0.9375rem
+    fontWeight: '400'
+    lineHeight: 1.375rem
+  body-md:
+    fontFamily: Inter
+    fontSize: 0.8125rem
+    fontWeight: '400'
+    lineHeight: 1.1875rem
+  body-sm:
+    fontFamily: Inter
+    fontSize: 0.75rem
+    fontWeight: '400'
+    lineHeight: 1rem
+  label-md:
+    fontFamily: Inter
+    fontSize: 0.75rem
+    fontWeight: '600'
+    lineHeight: 1rem
+    letterSpacing: 0.02em
+  label-sm:
+    fontFamily: Inter
+    fontSize: 0.6875rem
+    fontWeight: '600'
+    lineHeight: 0.875rem
+    letterSpacing: 0.04em
+  code-sm:
+    fontFamily: monospace
+    fontSize: 0.75rem
+    fontWeight: '500'
+    lineHeight: 1rem
+rounded:
+  sm: 0.125rem
+  DEFAULT: 0.25rem
+  md: 0.375rem
+  lg: 0.5rem
+  xl: 0.75rem
+  full: 9999px
+spacing:
+  gutter: 0.75rem
+  gutter-desktop: 1rem
+  margin: 0.75rem
+  margin-desktop: 1rem
+  space-xs: 0.25rem
+  space-sm: 0.375rem
+  space-md: 0.75rem
+  space-lg: 1rem
+  space-xl: 1.5rem
+---
+
+## Brand & Style
+
+This design system embodies a disciplined, high-density clinical workstation aesthetic engineered for mission-critical electronic health record (EHR) environments. Drawing inspiration from modern clinical architectures, the visual style prioritizes absolute visual clarity, swift data scannability, and operational fatigue reduction during long clinical shifts.
+
+The aesthetic sits at the intersection of **Clinical Minimalism** and **Information Architecture Rigor**. It eschews decorative novelties—such as heavy dropshadows, blurred surfaces, or oversized whitespace—in favor of hairline structural dividers, crisp contrast hierarchies, and dense information layering. The interface projects surgical precision, reliability, and calm authority, enabling physicians, nurses, and medical staff to parse vital signs, allergy rosters, and medication reconciliations with zero ambiguity.
+
+## Colors
+
+The system uses a calibrated medical spectrum that minimizes eye fatigue under fluorescent hospital lighting while maintaining rigid accessibility standards:
+
+- **Primary (`#0D9488`)**: Surgical clinical teal. Used exclusively for committed clinical actions, active navigation states, interactive toggles, and primary CTA triggers. The deeper tone (`#0F766E`) serves as the hover and focus confirmation state.
+- **Secondary (`#334155`)**: Slate steel. Provides structural weight to secondary buttons, inactive tab headers, metadata keys, and secondary icon indicators.
+- **Tertiary (`#4F46E5`)**: Clinical indigo. Reserved for diagnostic, laboratory, radiology reports, and external EHR ingestion feeds.
+- **Neutral (`#0F172A`)**: Dark slate navy. Serves as high-contrast primary text, establishing clear hierarchy over `#334155` (secondary body) and `#64748B` (caption/hint text).
+- **Background & Canvas**: High-clarity medical slate `#F8FAFC` for app canvases, transitioning to pure `#FFFFFF` for data-entry surfaces, SOAP note cards, and patient chart viewports.
+- **Borders & Dividers**: Crisp cool gray `#E2E8F0` at 1px thickness for cell grids, structural split-panes, and component shells.
+- **Functional Status System**:
+  - *Normal / Active*: Emerald (`#059669` text, `#ECFDF5` background, `#A7F3D0` border).
+  - *Pending / Cautionary*: Amber (`#D97706` text, `#FFFBEB` background, `#FDE68A` border).
+  - *Allergy / Critical Alarm*: Rose (`#E11D48` text, `#FFF1F2` background, `#FECDD3` border).
+
+## Typography
+
+Typography in this design system is configured for compact visual efficiency and tabular precision:
+
+- **Primary Font (Inter)**: Applied across all interface chrome, patient identifiers, diagnostic labels, and clinical encounter notes. Numeric values utilize OpenType tabular figures (`tnum`) to ensure numerical alignment across vertical rosters and vital trend columns.
+- **Monospace Fallback (`monospace`)**: Applied explicitly to Medical Record Numbers (MRN), RxNorm NDC codes, dosage regimens (e.g., `500mg PO Q8H`), and HL7/FHIR metadata streams to eliminate character misinterpretation.
+- **Density Scaling**: Body type sits intentionally between 12px (`body-md`: 0.8125rem) and 13px (`body-lg`: 0.9375rem) to maximize on-screen real estate without degrading readability in split-view configurations.
+
+## Layout & Spacing
+
+The layout philosophy centers on a high-density, multi-pane workstation architecture:
+
+- **Grid & Panes**: The system uses a continuous multi-column split pane structure rather than fluid responsive cards. Workstations maintain a permanent left navigation rail (48px–64px collapsed), a secondary patient demographic summary column (280px–320px), a primary clinical workspace (fluid), and an optional collapsible contextual tray (diagnostic order review or CDS alerts, 320px).
+- **Rhythm**: Spacing is calibrated to a tight 4px base increment (`space-xs`: 4px, `space-sm`: 6px, `space-md`: 12px, `space-lg`: 16px, `space-xl`: 24px). Compact spacing allows clinicians to review complete records without excessive vertical scrolling.
+- **Form Factors**:
+  - *Desktop / Station (≥1280px)*: Multi-column split views display simultaneously with fixed pane borders and persistent quick-action ribbons.
+  - *Tablet / COW (Computer on Wheels) (768px - 1279px)*: Secondary and right contextual panes collapse into off-canvas side drawers, keeping the core chart front and center.
+  - *Compact View (<768px)*: Stacks panes into sequential drill-down views with top tab switches for triage review.
+
+## Elevation & Depth
+
+Visual hierarchy is communicated through structural tonal planes and low-contrast outlines rather than atmospheric elevation:
+
+- **Zero-Shadow Philosophy**: Standard panels, table headers, and form groups use flat background tones (`#FFFFFF` on `#F8FAFC`) framed by crisp 1px borders (`#E2E8F0`). This avoids visual mud and keeps data legible on low-grade hospital monitors.
+- **Tonal Layering**: 
+  - Canvas: `#F8FAFC`
+  - Panes / Cards: `#FFFFFF`
+  - Inset Fields / Table Subheaders: `#F1F5F9`
+  - Selected Active Row: `#F0FDFA` (tinted with Primary 50)
+- **Overlay Elevation**: Reserved strictly for high-urgency interruptions:
+  - *Dropdowns / Tooltips*: `0 2px 4px rgba(15, 23, 42, 0.08)`, 1px `#CBD5E1` border.
+  - *Clinical Modals & Dosage Overrides*: `0 10px 15px -3px rgba(15, 23, 42, 0.12), 0 4px 6px -2px rgba(15, 23, 42, 0.05)`, backed by a 40% `#0F172A` scrim.
+
+## Shapes
+
+The design system employs sharp, disciplined micro-radii to reinforce the clinical, precision-instrument aesthetic:
+
+- **Base Radius (`0.25rem` / 4px)**: Applied consistently to buttons, text input fields, status badges, alert banners, and structured card corners.
+- **Inner Controls (`0.125rem` / 2px)**: Applied to micro-controls such as checkboxes, radio indicator marks, stepper chevrons, and inline table tags.
+- **No Pill Radii**: Rounded-full pill shapes are banned except for urgent single-character notification pips, maintaining structural square alignments throughout the workstation grid.
+
+## Components
+
+### Buttons & Action Ribbons
+- **Primary Action**: Solid `#0D9488` background, `#FFFFFF` text, 4px radius, compact padding (6px 12px for standard, 4px 8px for dense). Focus rings utilize an explicit 2px `#0D9488` outline with 2px white offset.
+- **Secondary Action**: White `#FFFFFF` background, 1px `#CBD5E1` border, `#334155` text.
+- **Action Ribbon**: A horizontal keyboard-friendly toolbar docked to the bottom or top of charts displaying quick order hotkeys (e.g., `F2: Sign Note`, `F4: New Rx`) with monospace keycap badges (`#F1F5F9` background, 1px `#CBD5E1` border).
+
+### Status Pills & Diagnostic Badges
+- Compact height (18px–20px), uppercase or small bold tracking (`label-sm`), 4px border radius.
+- *Active / Normal*: Emerald badge with subtle `#A7F3D0` outline.
+- *Allergy / Severe Warning*: Rose badge with high-contrast text (`#9F1239`) and distinct left-aligned alert glyph.
+- *Pending / Unsigned*: Amber badge with outline emphasis.
+
+### Dense Data Tables
+- Table headers are persistent, 28px height, `#F1F5F9` surface with uppercase 11px slate-600 typography.
+- Row heights are strictly compact (32px default, 28px high-density).
+- Alternate row zebra striping using `#FFFFFF` and `#F8FAFC`. Hover states apply `#F1F5F9`, while selected clinical rows transition to `#F0FDFA` with an anchored 3px `#0D9488` left edge bar.
+- Numeric columns (Vitals, Lab Values) right-align with monospace tabular numerals.
+
+### Form Inputs & Clinical Selectors
+- Flat `#FFFFFF` fields with 1px `#CBD5E1` border, transitioning to `#0D9488` on focus.
+- Micro-labels positioned above inputs or inlined in split-label formats.
+- Compact dropdowns and multi-select auto-completes optimized for rapid keyboard entry (typeahead code matching).
+
+### Checkboxes & Radios
+- 14px × 14px square checkboxes with 2px radius. In active state, filled with `#0D9488` featuring a sharp white checkmark. Unchecked state uses a 1.5px `#94A3B8` border on `#FFFFFF`.
+
+### SOAP Note Cards & Multi-Pane Chart Containers
+- Structured cards featuring a persistent header bar (`#F8FAFC`), 1px `#E2E8F0` divider, and clear quadrant or tab sections (Subjective, Objective, Assessment, Plan).
+- Rich-text editor areas inside SOAP cards feature monospace macro expansions (`.hpi`, `.ros`) rendered in teal badges that expand inline.
